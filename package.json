@@ -10,7 +10,7 @@
     "clean": "rm -rf lib",
     "lint": "eslint '**/*.js' --ignore-path .gitignore",
     "prepublish": "yarn run build",
-    "test": "npm run lint && npm run test:mocha",
+    "test": "yarn run lint && yarn run test:mocha",
     "test:mocha": "mocha --compilers=js:babel-register 'src/test.js'"
   },
   "dependencies": {
