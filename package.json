@@ -1,0 +1,59 @@
+{
+  "name": "eslint-plugin-goodeggs",
+  "version": "7.3.1",
+  "author": "Good Eggs Inc.",
+  "description": "An eslint plugin containing linter rules specific to Good Eggs.",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && babel --out-dir lib --copy-files src",
+    "clean": "rm -rf lib",
+    "lint": "eslint '**/*.js' --ignore-path .gitignore",
+    "prepublish": "yarn run build",
+    "test": "npm run lint && npm run test:mocha",
+    "test:mocha": "mocha --compilers=js:babel-register 'src/test.js'"
+  },
+  "dependencies": {
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^v2.14.0",
+    "eslint-plugin-lodash": "^3.1.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "globals": "^11.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-goodeggs": "file:.",
+    "mocha": "^5.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "^4.11.0 || ^5.0.0",
+    "typescript-eslint-parser": "^18.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "plugins": [
+      "goodeggs"
+    ],
+    "extends": [
+      "plugin:goodeggs/goodeggs"
+    ],
+    "env": {
+      "node": true
+    }
+  }
+}
