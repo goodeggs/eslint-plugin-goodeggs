@@ -4,8 +4,9 @@ A plugin containing ESLint rules specific to Good Eggs.
 
 ## Installation
 
-1. `yarn add --dev eslint eslint-plugin-goodeggs`
-2. add an `eslintConfig` section to `package.json`:
+1.  `yarn add --dev eslint eslint-plugin-goodeggs`
+2.  add an `eslintConfig` section to `package.json`:
+
 ```json
    "eslintConfig": {
      "plugins": [
@@ -19,12 +20,26 @@ A plugin containing ESLint rules specific to Good Eggs.
      }
    }
 ```
-3. add linting scripts:
+
+3.  add linting scripts:
+
+```js
+"scripts": {
+  "lint": "yarn run lint:src",
+  "lint:src": "yarn run lint:src:glob '**/*.{js,jsx,ts,tsx}'",
+  "lint:src:glob": "eslint --ignore-path .eslintignore",
+  "fmt": "yarn fmt:src",
+  "fmt:src": "yarn run fmt:src:glob '**/*.{js,jsx,ts,tsx}'",
+  "fmt:src:glob": "eslint --ignore-path .eslintignore --fix"
+}
 ```
-   "scripts": {
-     "lint": "eslint '**/*.js' --ignore-path .eslintignore",
-     "lint:fix": "yarn lint --fix"
-   }
+
+4.  ensure lint is run [during CI](https://github.com/goodeggs/best-practices/glob/master/javascript/build-deploy-modules.md#travisyml):
+
+```js
+"scripts": {
+  "test": "yarn run lint && yarn run test:mocha"
+}
 ```
 
 ## Prettier
@@ -64,8 +79,16 @@ Next, add formatting to your `package.json`'s scripts field:
 
 ```js
 "scripts": {
-  // ...
-  "fmt": "prettier --write --ignore-path .eslintignore '**/*.js' '**/*.jsx' '**/*.yml' '**/*.json' '**/*.md'",
+  "lint": "yarn run lint:src && yarn run lint:prettier",
+  "lint:src": "yarn run lint:src:glob '**/*.{js,jsx,ts,tsx}'",
+  "lint:src:glob": "eslint --ignore-path .eslintignore",
+  "lint:prettier": "yarn run lint:prettier:glob '**/*.{yml,json,md,gql,graphql}'",
+  "lint:prettier:glob": "prettier --ignore-path .eslintignore --list-different",
+  "fmt": "yarn run fmt:src && yarn run fmt:prettier",
+  "fmt:src": "yarn run fmt:src:glob '**/*.{js,jsx,ts,tsx}'",
+  "fmt:src:glob": "eslint --ignore-path .eslintignore --fix",
+  "fmt:prettier": "yarn run fmt:prettier:glob '**/*.{yml,json,md,gql,graphql}'",
+  "fmt:prettier:glob": "prettier --ignore-path .eslintignore --write"
 }
 ```
 
@@ -77,19 +100,30 @@ Next, add formatting to your `package.json`'s scripts field:
 
 You'll likely want to enable a [Prettier editor integration](https://prettier.io/docs/en/editors.html) for your editor so your code is automatically formatted on save.
 
-### Recommended to use with `pretty-quick`
+### Use with `lint-staged`
 
-* Ensures that code is formatted by prettier prior to commit, regardless of editor settings
+* Ensure we run `prettier` and any other linters e.g. eslint, stylelint to staged files prior to commit
+* Allows us to get instant feedback on style fail prior to push & CI
+* Use with pre-commit git hook (see [best practice](https://github.com/goodeggs/best-practices/blob/master/javascript/git-hooks.md))
 * Add as a dev dependency
-* Applies `prettier` to staged files
-* Use with pre-commit git hook
+* Good example [`goodeggs-stats`](https://github.com/goodeggs/goodeggs-stats/blob/master/package.json)
 
 e.g. in `package.json`
 
 ```json
 "husky": {
   "hooks": {
-    "pre-commit": "pretty-quick --staged"
+    "pre-commit": "lint-staged"
   }
+},
+"lint-staged": {
+  "*.{js,jsx,ts,tsx}": [
+    "yarn run fmt:src:glob",
+    "git add"
+  ],
+  "*.{yml,json,md,gql,graphql}": [
+    "yarn run fmt:prettier:glob",
+    "git add"
+  ]
 }
 ```
