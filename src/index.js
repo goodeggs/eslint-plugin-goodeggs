@@ -192,9 +192,10 @@ export default {
             node: true,
           },
           rules: {
-            // In pre-Node 10 environments, where import is not available to the runtime, permit the
-            // use of `require`.
-            // TODO(ndhoule): Check `process.version`; if version >= 10, then do not disable this.
+            // Node does not support ES modules; because these files are not transpiled, permit use
+            // of `require`. (Ideally prohibit ES6 module syntax, but `eslint-plugin-import` doesn't
+            // support this.)
+            'global-require': 'off',
             'import/no-commonjs': 'off',
           },
         },
