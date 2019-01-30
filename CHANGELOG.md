@@ -1,5 +1,10 @@
 # Unreleased Changes
 
+- Rename default config from `goodeggs` to `default` (`plugin:goodeggs/goodeggs` -> `plugin:goodeggs/default`)
+- Break flowtype configuration into `flowtype` config (`plugin:goodeggs/flowtype`)
+- Break mocha configuration into `mocha` config (`plugin:goodeggs/mocha`)
+- Break jest configuration into `mocha` config (`plugin:goodeggs/jest`)
+
 <!-- Put changelog messages that haven't yet been released here! -->
 
 # [v7.2.0](https://github.com/goodeggs/best-practices/compare/v7.1.0...v7.2.0)
