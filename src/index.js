@@ -20,7 +20,7 @@ export default {
         'plugin:lodash/recommended',
         'prettier',
         'plugin:prettier/recommended',
-        'plugin:prettier/babel',
+        'prettier/babel',
       ],
       settings: {
         // 'import/resolver': {
