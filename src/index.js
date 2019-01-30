@@ -12,6 +12,7 @@ export default {
         'plugin:lodash/recommended',
         'prettier',
         'plugin:prettier/recommended',
+        'plugin:prettier/babel',
       ],
       settings: {
         // 'import/resolver': {
@@ -165,6 +166,7 @@ export default {
       overrides: [
         // TypeScript files
         // TODO(ndhoule): This is an outdated approach, replace it with its new, official equivalents: https://eslint.org/blog/2019/01/future-typescript-eslint
+        // Also enable 'prettier/@typescript-eslint' when you do this
         {
           files: ['**/*.{ts,tsx}'],
           parser: 'typescript-eslint-parser',
