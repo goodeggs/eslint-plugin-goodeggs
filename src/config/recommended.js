@@ -34,7 +34,7 @@ export default {
     'guard-for-in': 'error',
     'handle-callback-err': 'error',
     'linebreak-style': ['error', 'unix'],
-    'new-cap': ['error', {capIsNewExceptions: ['DT_DecoderDataResponse', 'JSONSchemaFactory']}],
+    'new-cap': ['error', {capIsNewExceptions: ['JSONSchemaFactory']}],
     'no-alert': 'error',
     'no-caller': 'error',
     'no-console': 'warn',
