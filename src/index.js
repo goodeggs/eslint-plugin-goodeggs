@@ -153,34 +153,34 @@ export default {
             'no-unused-vars': 'off',
 
             // eslint-plugin-typescript
-            'goodeggs/typescript-adjacent-overload-signatures': 'error',
-            'goodeggs/typescript-class-name-casing': 'error',
+            'typescript/adjacent-overload-signatures': 'error',
+            'typescript/class-name-casing': 'error',
             // FIXME(ndhoule): This rule is great in almost every case except React components (in
             // particular, stateless functional components), which you're forced to annotate in a
             // non-natural way. The recommended way to annotate those components is:
             //
             // const MyComponent: React.SFC<Props> = ({...}: Props): ReactElement<Props> => (...);
-            'goodeggs/typescript-explicit-function-return-type': ['error', {allowExpressions: true}],
-            'goodeggs/typescript-explicit-member-accessibility': 'error',
+            'typescript/explicit-function-return-type': ['error', {allowExpressions: true}],
+            'typescript/explicit-member-accessibility': 'error',
             // TypeScript recommends against prefixing interfaces with `I`:
             // https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#names
-            'goodeggs/typescript-interface-name-prefix': 'off',
-            'goodeggs/typescript-member-delimiter-style': 'error',
-            'goodeggs/typescript-member-naming': 'error',
-            'goodeggs/typescript-member-ordering': 'error',
-            'goodeggs/typescript-no-angle-bracket-type-assertion': 'error',
-            'goodeggs/typescript-no-array-constructor': 'error',
+            'typescript/interface-name-prefix': 'off',
+            'typescript/member-delimiter-style': 'error',
+            'typescript/member-naming': 'error',
+            'typescript/member-ordering': 'error',
+            'typescript/no-angle-bracket-type-assertion': 'error',
+            'typescript/no-array-constructor': 'error',
             // In practice, we use empty interfaces for React component Props types that we want to
             // use in factories; this rule doesn't really benefit us much.
-            'goodeggs/typescript-no-empty-interface': 'off',
-            'goodeggs/typescript-no-explicit-any': 'warn',
-            'goodeggs/typescript-no-inferrable-types': 'error',
-            'goodeggs/typescript-no-namespace': 'error',
-            'goodeggs/typescript-no-non-null-assertion': 'error',
-            'goodeggs/typescript-no-parameter-properties': 'error',
-            'goodeggs/typescript-no-triple-slash-reference': 'error',
+            'typescript/no-empty-interface': 'off',
+            'typescript/no-explicit-any': 'warn',
+            'typescript/no-inferrable-types': 'error',
+            'typescript/no-namespace': 'error',
+            'typescript/no-non-null-assertion': 'error',
+            'typescript/no-parameter-properties': 'error',
+            'typescript/no-triple-slash-reference': 'error',
             // FIXME(ndhoule): Doesn't work, look into fixing this
-            // 'goodeggs/typescript-no-type-alias': [
+            // 'typescript/no-type-alias': [
             //   'error',
             //   {
             //     allowAliases: 'in-unions-and-intersections',
@@ -189,11 +189,11 @@ export default {
             //     allowMappedTypes: 'in-unions-and-intersections',
             //   },
             // ],
-            'goodeggs/typescript-no-unused-vars': 'error',
-            'goodeggs/typescript-no-use-before-define': ['error', {functions: false, typedefs: true}],
-            'goodeggs/typescript-no-var-requires': 'error',
-            'goodeggs/typescript-prefer-namespace-keyword': 'error',
-            'goodeggs/typescript-type-annotation-spacing': 'error',
+            'typescript/no-unused-vars': 'error',
+            'typescript/no-use-before-define': ['error', {functions: false, typedefs: true}],
+            'typescript/no-var-requires': 'error',
+            'typescript/prefer-namespace-keyword': 'error',
+            'typescript/type-annotation-spacing': 'error',
           },
         },
 
@@ -207,7 +207,7 @@ export default {
             // In pre-Node 10 environments, where import is not available to the runtime, permit the
             // use of `require`.
             // TODO(ndhoule): Check `process.version`; if version >= 10, then do not disable this.
-            'goodeggs/import-no-commonjs': 'off',
+            'import/no-commonjs': 'off',
           },
         },
 
