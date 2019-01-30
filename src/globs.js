@@ -1,5 +1,7 @@
 /*
  * Common globs used across all Good Eggs projects.
+ *
+ * TODO(ndhoule): Copypasta'd from goodeggs-toolkit, extract this somewhere
  */
 
 export const extensions = ['js', 'jsx', 'ts', 'tsx'];
