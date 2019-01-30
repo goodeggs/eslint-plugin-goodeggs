@@ -1,59 +1,18 @@
-import globals from 'globals';
-import * as pluginFlowtype from 'eslint-plugin-flowtype';
-import * as pluginImport from 'eslint-plugin-import';
-import * as pluginLodash from 'eslint-plugin-lodash';
-import * as pluginMocha from 'eslint-plugin-mocha';
-import * as pluginTypeScript from 'eslint-plugin-typescript';
-
-import {formatRuleName, formatRules} from './utils';
-
-const testGlobals = {
-  ...globals.mocha,
-
-  expect: false,
-  given: false,
-  withContext: false,
-};
-
-const rules = [
-  {name: 'flowtype', rules: pluginFlowtype.rules},
-  {name: 'import', rules: pluginImport.rules},
-  {name: 'lodash', rules: pluginLodash.rules},
-  {name: 'mocha', rules: pluginMocha.rules},
-  {name: 'typescript', rules: pluginTypeScript.rules},
-].reduce((acc, plugin) => {
-  for (const [ruleName, rule] of Object.entries(plugin.rules)) {
-    acc[formatRuleName({pluginName: plugin.name, ruleName})] = rule;
-  }
-  return acc;
-}, {});
-
 export default {
-  environments: {
-    test: {
-      globals: {
-        ...testGlobals,
-      },
-    },
-    'browser-test': {
-      globals: {
-        ...globals.browser,
-        ...globals.commonjs,
-        ...testGlobals,
-      },
-    },
-    'server-side-test': {
-      globals: {
-        ...globals.node,
-        ...testGlobals,
-      },
-    },
-  },
-  rules,
   configs: {
-    goodeggs: {
-      plugins: ['lodash'],
-      extends: ['eslint:recommended'],
+    default: {
+      plugins: [
+        'lodash',
+        'import',
+        'prettier',
+      ],
+      extends: [
+        'eslint:recommended',
+        'plugin:import/recommended',
+        'plugin:lodash/recommended',
+        'prettier',
+        'plugin:prettier/recommended',
+      ],
       env: {
         es6: true,
       },
@@ -61,9 +20,6 @@ export default {
         sourceType: 'module',
       },
       settings: {
-        flowtype: {
-          onlyFilesWithFlowAnnotation: false,
-        },
         'import/resolver': {
           // used by eslint-plugin-import rules
           node: {
@@ -77,49 +33,6 @@ export default {
         },
       },
       rules: {
-        // eslint-plugin-flowtype
-        ...formatRules(pluginFlowtype.configs.recommended.rules),
-
-        // eslint-plugin-import
-        ...formatRules(pluginImport.configs.recommended.rules),
-        'goodeggs/import-first': 'error',
-        'goodeggs/import-newline-after-import': 'error',
-        'goodeggs/import-no-absolute-path': 'error',
-        'goodeggs/import-no-commonjs': 'error',
-        'goodeggs/import-no-deprecated': 'warn',
-        'goodeggs/import-no-duplicates': 'error',
-        'goodeggs/import-no-dynamic-require': 'error',
-        'goodeggs/import-no-extraneous-dependencies': 'error',
-        'goodeggs/import-no-mutable-exports': 'error',
-        'goodeggs/import-order': [
-          'error',
-          {
-            'newlines-between': 'always-and-inside-groups',
-            groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
-          },
-        ],
-
-        // eslint-plugin-lodash
-        ...formatRules(pluginLodash.configs.recommended.rules),
-        'goodeggs/lodash-chaining': ['error', 'always', 2],
-        'goodeggs/lodash-import-scope': ['error', 'full'],
-        'goodeggs/lodash-matches-prop-shorthand': ['error', 'never'],
-        'goodeggs/lodash-matches-shorthand': ['error', 'never'],
-        'goodeggs/lodash-path-style': ['error', 'as-needed'],
-        'goodeggs/lodash-prefer-constant': 'off',
-        'goodeggs/lodash-prefer-flat-map': 'error',
-        'goodeggs/lodash-prefer-lodash-method': 'off',
-        'goodeggs/lodash-prefer-lodash-typecheck': 'off',
-        'goodeggs/lodash-prefer-matches': 'off',
-        'goodeggs/lodash-prefer-noop': 'off',
-        'goodeggs/lodash-prefer-over-quantifier': 'off',
-        'goodeggs/lodash-prefer-thru': 'off',
-        'goodeggs/lodash-preferred-alias': 'error',
-        'goodeggs/lodash-prop-shorthand': ['error', 'never'],
-
-        // eslint-plugin-mocha
-        ...formatRules(pluginMocha.configs.recommended.rules),
-
         'array-bracket-spacing': ['error', 'never'],
         'arrow-body-style': ['error', 'as-needed'],
         'arrow-parens': ['error', 'always'],
@@ -198,9 +111,45 @@ export default {
         'space-infix-ops': 'error',
         'space-unary-ops': ['error', {words: true, nonwords: false}],
         'spaced-comment': ['error', 'always'],
+
+        // eslint-plugin-import
+        'import/first': 'error',
+        'import/newline-after-import': 'error',
+        'import/no-absolute-path': 'error',
+        'import/no-commonjs': 'error',
+        'import/no-deprecated': 'warn',
+        'import/no-duplicates': 'error',
+        'import/no-dynamic-require': 'error',
+        'import/no-extraneous-dependencies': 'error',
+        'import/no-mutable-exports': 'error',
+        'import/order': [
+          'error',
+          {
+            'newlines-between': 'always-and-inside-groups',
+            groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
+          },
+        ],
+
+        // eslint-plugin-lodash
+        'lodash/chaining': ['error', 'always', 2],
+        'lodash/import-scope': ['error', 'full'],
+        'lodash/matches-prop-shorthand': ['error', 'never'],
+        'lodash/matches-shorthand': ['error', 'never'],
+        'lodash/path-style': ['error', 'as-needed'],
+        'lodash/prefer-constant': 'off',
+        'lodash/prefer-flat-map': 'error',
+        'lodash/prefer-lodash-method': 'off',
+        'lodash/prefer-lodash-typecheck': 'off',
+        'lodash/prefer-matches': 'off',
+        'lodash/prefer-noop': 'off',
+        'lodash/prefer-over-quantifier': 'off',
+        'lodash/prefer-thru': 'off',
+        'lodash/preferred-alias': 'error',
+        'lodash/prop-shorthand': ['error', 'never'],
       },
       overrides: [
         // TypeScript files
+        // TODO(ndhoule): This is an outdated approach, replace it with its new, official equivalents: https://eslint.org/blog/2019/01/future-typescript-eslint
         {
           files: ['**/*.{ts,tsx}'],
           parser: 'typescript-eslint-parser',
@@ -259,7 +208,49 @@ export default {
             'goodeggs/typescript-type-annotation-spacing': 'error',
           },
         },
+
+        // Configuration files (e.g. webpack.config.babel.js) that are not transpiled through Babel.
+        {
+          files: ['*.config{.babel,}.js', '.*rc.js'],
+          env: {
+            node: true,
+          },
+          rules: {
+            // In pre-Node 10 environments, where import is not available to the runtime, permit the
+            // use of `require`.
+            // TODO(ndhoule): Check `process.version`; if version >= 10, then do not disable this.
+            'goodeggs/import-no-commonjs': 'off',
+          },
+        },
+
+        // Configuration files (e.g. webpack.config.babel.js) that are transpiled through Babel.
+        {
+          files: ['*.config{.babel,}.js', '.*rc.js'],
+          env: {
+            node: true,
+          },
+        },
       ],
+    },
+
+    flow: {
+      plugins: ['flowtype'],
+      extends: ['plugin:flowtype/recommended'],
+      settings: {
+        flowtype: {
+          onlyFilesWithFlowAnnotation: false,
+        },
+      },
+    },
+
+    jest: {
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+    },
+
+    mocha: {
+      plugins: ['mocha'],
+      extends: ['plugin:mocha/recommended'],
     },
   },
 };
