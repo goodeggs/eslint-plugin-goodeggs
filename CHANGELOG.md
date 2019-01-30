@@ -1,9 +1,12 @@
 # Unreleased Changes
 
-- Rename default config from `goodeggs` to `default` (`plugin:goodeggs/goodeggs` -> `plugin:goodeggs/default`)
+- Rename default config from `goodeggs` to `recommended` (`plugin:goodeggs/goodeggs` -> `plugin:goodeggs/recommended`)
 - Break flowtype configuration into `flowtype` config (`plugin:goodeggs/flowtype`)
 - Break mocha configuration into `mocha` config (`plugin:goodeggs/mocha`)
 - Break jest configuration into `mocha` config (`plugin:goodeggs/jest`)
+- Remove all stylistic rules (covered by `eslint-config-prettier`)
+- Revert all namespaced rules to their stock values (e.g. `goodeggs/import-whatever` -> `import/whatever`)
+- Move ops-specific configuration into its own config (`plugin:goodeggs/ops`)
 
 <!-- Put changelog messages that haven't yet been released here! -->
 
