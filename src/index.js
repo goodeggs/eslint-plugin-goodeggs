@@ -198,9 +198,9 @@ export default {
           },
         },
 
-        // Configuration files (e.g. webpack.config.babel.js) that are not transpiled through Babel.
+        // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
         {
-          files: ['*.config{.babel,}.js', '.*rc.js'],
+          files: ['*.config.js', '.*rc.js'],
           env: {
             node: true,
           },
