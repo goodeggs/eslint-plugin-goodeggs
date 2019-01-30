@@ -21,6 +21,8 @@
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.2.3",
     "@babel/register": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.1.1",
+    "@typescript-eslint/parser": "^1.1.1",
     "babel-eslint": "^10.0.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "eslint": "^5.12.1",
@@ -33,13 +35,13 @@
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-typescript": "^0.14.0",
     "mocha": "^5.2.0",
     "prettier": "1.16.2",
-    "typescript": "*",
-    "typescript-eslint-parser": "^18.0.0"
+    "typescript": "*"
   },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.1.1",
+    "@typescript-eslint/parser": "^1.1.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.1",
     "eslint-config-prettier": "^4.0.0",
@@ -51,10 +53,8 @@
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-typescript": "^0.14.0",
     "prettier": "1.16.2",
-    "typescript": "*",
-    "typescript-eslint-parser": "^18.0.0"
+    "typescript": "*"
   },
   "babel": {
     "presets": [
