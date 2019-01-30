@@ -1,25 +1,30 @@
+import * as globs from './globs';
+
 export default {
   configs: {
     default: {
-      plugins: [
-        'lodash',
-        'import',
-        'prettier',
-      ],
+      parser: 'babel-eslint',
+      plugins: ['babel', 'import', 'lodash', 'prettier'],
       extends: [
         'eslint:recommended',
-        'plugin:import/recommended',
+        // 'plugin:import/recommended',
+        // 'plugin:import/typescript',
         'plugin:lodash/recommended',
         'prettier',
         'plugin:prettier/recommended',
       ],
-      env: {
-        es6: true,
-      },
-      parserOptions: {
-        sourceType: 'module',
-      },
       settings: {
+        // 'import/resolver': {
+        //   node: {
+        //     // TODO(ndhoule): Does this merge with jsx, tsx? I think so?
+        //     extensions: ['.coffee', '.json'],
+        //     moduleDirectory: [
+        //       'node_modules', // default
+        //       'src', // used by apps like garbanzo
+        //       '.', // used by apps that use the /local_modules pattern
+        //     ],
+        //   },
+        // },
         'import/resolver': {
           // used by eslint-plugin-import rules
           node: {
@@ -31,6 +36,9 @@ export default {
             ],
           },
         },
+      },
+      env: {
+        es6: true,
       },
       rules: {
         'array-bracket-spacing': ['error', 'never'],
@@ -111,6 +119,12 @@ export default {
         'space-infix-ops': 'error',
         'space-unary-ops': ['error', {words: true, nonwords: false}],
         'spaced-comment': ['error', 'always'],
+
+        // eslint-plugin-babel
+        // TODO(ndhoule): Try enabling these and disabling the default rules
+        // 'babel/object-curly-spacing': ['error', 'never'],
+        // 'babel/quotes': ['error', 'single', {avoidEscape: true}],
+        // 'babel/semi': ['error', 'always'],
 
         // eslint-plugin-import
         'import/first': 'error',
@@ -230,12 +244,26 @@ export default {
             node: true,
           },
         },
+
+        // Project-local scripts.
+        {
+          files: [`scripts/**/*.{${globs.extensions.join(',')}}`],
+          env: {
+            node: true,
+          },
+          rules: {
+            'no-console': 'off',
+          },
+        },
       ],
     },
 
-    flow: {
-      plugins: ['flowtype'],
-      extends: ['plugin:flowtype/recommended'],
+    flowtype: {
+      plugins: ['flowtype', 'prettier'],
+      extends: [
+        'plugin:flowtype/recommended',
+        'prettier/flowtype',
+      ],
       settings: {
         flowtype: {
           onlyFilesWithFlowAnnotation: false,
@@ -251,6 +279,15 @@ export default {
     mocha: {
       plugins: ['mocha'],
       extends: ['plugin:mocha/recommended'],
+    },
+
+    react: {
+      plugins: ['prettier', 'react'],
+      extends: [
+        // 'plugin:import/react',
+        'plugin:react/recommended',
+        'prettier/react',
+      ],
     },
   },
 };
