@@ -202,7 +202,7 @@ export default {
 
         // Configuration files (e.g. webpack.config.babel.js) that are transpiled through Babel.
         {
-          files: ['*.config{.babel,}.js', '.*rc.js'],
+          files: ['*.config.babel.js'],
           env: {
             node: true,
           },
