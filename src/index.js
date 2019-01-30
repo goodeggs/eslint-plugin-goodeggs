@@ -15,29 +15,17 @@ export default {
       plugins: ['babel', 'import', 'lodash', 'prettier'],
       extends: [
         'eslint:recommended',
-        // 'plugin:import/recommended',
-        // 'plugin:import/typescript',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
         'plugin:lodash/recommended',
         'prettier',
         'plugin:prettier/recommended',
         'prettier/babel',
       ],
       settings: {
-        // 'import/resolver': {
-        //   node: {
-        //     // TODO(ndhoule): Does this merge with jsx, tsx? I think so?
-        //     extensions: ['.coffee', '.json'],
-        //     moduleDirectory: [
-        //       'node_modules', // default
-        //       'src', // used by apps like garbanzo
-        //       '.', // used by apps that use the /local_modules pattern
-        //     ],
-        //   },
-        // },
         'import/resolver': {
-          // used by eslint-plugin-import rules
           node: {
-            extensions: ['.js', '.jsx', '.ts', '.tsx', '.coffee', '.json'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
             moduleDirectory: [
               'node_modules', // default
               'src', // used by apps like garbanzo
@@ -259,7 +247,7 @@ export default {
     react: {
       plugins: ['prettier', 'react'],
       extends: [
-        // 'plugin:import/react',
+        'plugin:import/react',
         'plugin:react/recommended',
         'prettier/react',
       ],
