@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf lib && babel --out-dir lib --copy-files src",
+    "build": "yarn run clean && babel --out-dir lib --copy-files src",
     "clean": "rm -rf lib",
     "fmt": "yarn run lint --fix",
     "lint": "eslint --ext js,jsx,ts,tsx --ignore-path .gitignore --ignore-pattern '!.*rc.js' .",
