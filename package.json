@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-goodeggs",
-  "version": "7.4.0",
+  "version": "8.0.0-alpha.0",
   "author": "Good Eggs Inc.",
   "description": "An eslint plugin containing linter rules specific to Good Eggs.",
   "license": "MIT",
