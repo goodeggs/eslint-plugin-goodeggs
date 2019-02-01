@@ -1,2 +1,1 @@
-/* eslint-env goodeggs/test */
-it('works');
+it.skip('is tested', () => {});
