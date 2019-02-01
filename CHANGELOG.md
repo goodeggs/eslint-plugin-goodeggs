@@ -5,7 +5,7 @@
 - Rename default config from `goodeggs` to `recommended` (`plugin:goodeggs/goodeggs` -> `plugin:goodeggs/recommended`)
 - Break flowtype configuration into `flowtype` config (`plugin:goodeggs/flowtype`)
 - Break mocha configuration into `mocha` config (`plugin:goodeggs/mocha`)
-- Break jest configuration into `mocha` config (`plugin:goodeggs/jest`)
+- Break jest configuration into `jest` and `jestStrict` configurations (`plugin:goodeggs/jest` and `plugin:goodeggs/jestStrict`)
 - Remove all stylistic rules (covered by `eslint-config-prettier`)
 - Add React plugin and enable sane default rules that reflect current best practices and introduce some new ones that prevent common React performance errors.
 - Disable new-cap rules for `unionized.JSONSchemaFactory` (previously we only permitted `JSONSchemaFactory`)
