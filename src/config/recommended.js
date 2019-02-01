@@ -48,7 +48,7 @@ export default {
     'guard-for-in': 'error',
     'handle-callback-err': 'error',
     'linebreak-style': ['error', 'unix'],
-    'new-cap': ['error', {capIsNewExceptions: ['JSONSchemaFactory']}],
+    'new-cap': ['error', {capIsNewExceptionPattern: '(unionized\\.)?JSONSchemaFactory'}],
     'no-alert': 'error',
     'no-caller': 'error',
     'no-console': 'warn',
