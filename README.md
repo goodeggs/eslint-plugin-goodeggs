@@ -82,12 +82,12 @@ Next, add formatting to your `package.json`'s scripts field:
   "lint": "yarn run lint:src && yarn run lint:prettier",
   "lint:src": "yarn run lint:src:glob '**/*.{js,jsx,ts,tsx}'",
   "lint:src:glob": "eslint --ignore-path .eslintignore",
-  "lint:prettier": "yarn run lint:prettier:glob '**/*.{yml,json,md,gql,graphql}'",
+  "lint:prettier": "yarn run lint:prettier:glob '**/*.{yml,json,md,gql,graphql,flow}'",
   "lint:prettier:glob": "prettier --ignore-path .eslintignore --list-different",
   "fmt": "yarn run fmt:src && yarn run fmt:prettier",
   "fmt:src": "yarn run fmt:src:glob '**/*.{js,jsx,ts,tsx}'",
   "fmt:src:glob": "eslint --ignore-path .eslintignore --fix",
-  "fmt:prettier": "yarn run fmt:prettier:glob '**/*.{yml,json,md,gql,graphql}'",
+  "fmt:prettier": "yarn run fmt:prettier:glob '**/*.{yml,json,md,gql,graphql,flow}'",
   "fmt:prettier:glob": "prettier --ignore-path .eslintignore --write"
 }
 ```
@@ -121,7 +121,7 @@ e.g. in `package.json`
     "yarn run fmt:src:glob",
     "git add"
   ],
-  "*.{yml,json,md,gql,graphql}": [
+  "*.{yml,json,md,gql,graphql,flow}": [
     "yarn run fmt:prettier:glob",
     "git add"
   ]
