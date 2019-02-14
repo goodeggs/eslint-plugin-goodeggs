@@ -5,7 +5,20 @@ import * as globs from '../globs';
 
 export default {
   parser: 'babel-eslint',
-  plugins: ['@typescript-eslint', 'babel', 'import', 'lodash', 'prettier'],
+  plugins: [
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+    '@typescript-eslint',
+    // https://github.com/babel/eslint-plugin-babel
+    'babel',
+    // https://github.com/benmosher/eslint-plugin-import
+    'import',
+    // https://github.com/wix/eslint-plugin-lodash
+    'lodash',
+    // https://github.com/prettier/eslint-config-prettier
+    // https://github.com/prettier/eslint-plugin-prettier
+    'prettier'
+  ],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
