@@ -150,8 +150,13 @@ export default {
         // In practice, we use empty interfaces for factories that generate props for React
         // components with as-of-yet empty Props types.
         '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/no-for-in-array': 'error',
+        // TODO(ndhoule): Consider enabling this rule:
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-require-imports.md
+        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: true}],
+        '@typescript-eslint/promise-function-async': 'error',
 
         ...prettierTypescriptConfig.rules,
       },
