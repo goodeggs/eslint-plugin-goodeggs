@@ -144,6 +144,7 @@ export default {
         'new-cap': ['error', {capIsNewExceptions: ['DT_DecoderDataResponse', 'JSONSchemaFactory']}],
         'new-parens': 'error',
         'no-alert': 'error',
+        'no-await-in-loop': 'error',
         'no-caller': 'error',
         'no-console': 1,
         'no-div-regex': 'error',
