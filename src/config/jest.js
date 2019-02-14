@@ -1,5 +1,6 @@
 import {extensions} from '../globs';
 
+// https://github.com/jest-community/eslint-plugin-jest
 export default {
   plugins: ['jest'],
   extends: ['plugin:jest/recommended'],
