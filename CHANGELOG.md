@@ -68,6 +68,17 @@ Next, resolve any peer dependency warnings output by the previous command by ins
 
 > Note: If you're not using TypeScript, you can safely ignore the `typescript` peer dependency warning.
 
+Finally, update your project's eslint configuration to extend any [the `config`s](https://github.com/goodeggs/eslint-plugin-goodeggs/tree/master/src/config) applicable to your project.
+
+Here's a baseline configuration that makes no assumptions about test framework, UI vs Node app, etc.:
+
+```
+{
+  "extends": [
+    "plugin:goodeggs/recommended"
+  ]
+}
+```
 
 <!-- Put changelog messages that haven't yet been released here! -->
 
