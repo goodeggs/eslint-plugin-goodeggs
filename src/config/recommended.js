@@ -150,7 +150,9 @@ export default {
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: true}],
-        '@typescript-eslint/promise-function-async': 'error',
+        // TODO(ndhoule): Currently broken; enable once fixed
+        // https://github.com/typescript-eslint/typescript-eslint/issues/227
+        // '@typescript-eslint/promise-function-async': 'error',
 
         ...prettierTypescriptConfig.rules,
       },
