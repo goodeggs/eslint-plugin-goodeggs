@@ -154,6 +154,10 @@ export default {
         // https://github.com/typescript-eslint/typescript-eslint/issues/227
         // '@typescript-eslint/promise-function-async': 'error',
 
+        // FIXME(ndhoule): This rule false positives too frequently in TypeScript files to be useful
+        // right now.
+        'import/named': 'off',
+
         ...prettierTypescriptConfig.rules,
       },
     },
