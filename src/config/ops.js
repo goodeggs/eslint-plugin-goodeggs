@@ -11,7 +11,7 @@ export default {
         ...existingNewCapRule,
         capIsNewExceptionPattern: [
           '(',
-          ['(dryrain.*|window)\\.DT_.+', existingNewCapRule.capIsNewExceptionPattern]
+          ['\\.DT_.+', existingNewCapRule.capIsNewExceptionPattern]
             .map((regexp) => `(${regexp})`)
             .join('|'),
           ')',
