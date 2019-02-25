@@ -17,6 +17,8 @@ This is a significant update with several breaking changes.
 
 ### Migration Guide
 
+For an example of all these steps in action, see [gather-ui#517](https://github.com/goodeggs/gather-ui/pull/517).
+
 #### 1. Upgrade `eslint-plugin-goodeggs`.
 
 There are two possible migration paths available:
