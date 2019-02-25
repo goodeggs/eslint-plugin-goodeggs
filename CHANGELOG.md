@@ -93,9 +93,9 @@ Here's a baseline configuration that makes no assumptions about your environment
 
 ```json
 {
-"extends": [
-"plugin:goodeggs/recommended"
-]
+  "extends": [
+    "plugin:goodeggs/recommended"
+  ]
 }
 ```
 
