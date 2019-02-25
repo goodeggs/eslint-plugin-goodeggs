@@ -15,43 +15,51 @@ This is a significant update with several breaking changes.
   - Move ops-specific configuration into its own config (`plugin:goodeggs/ops`)
   - Disable new-cap rules `dryrain(Api).DT_*` invocations
 
-### Migration path
+### Migration Guide
 
-There are two possible migration paths available.
+#### 1. Upgrade `eslint-plugin-goodeggs`.
 
-#### Consume this package through `@goodeggs/toolkit` (recommended)
+There are two possible migration paths available:
 
-Remove all eslint and prettier dependencies from your project (`eslint`, `eslint-babel`, `eslint-plugin-*`, `eslint-config-*` `prettier`, etc.).
+<details>
+<summary>Consume this package through `@goodeggs/toolkit`</summary>
+
+---
+Remove all eslint and prettier dependencies from your project (`eslint`, `eslint-babel`, `eslint-plugin-*`, `eslint-config-*` `prettier`, etc.):
 
 ```sh
 yarn remove eslint eslint-babel prettier
 # Next, remove any packages starting in 'eslint-plugin-' and 'eslint-config-'
 ```
 
-Install `@goodeggs/toolkit`:
+Next, install `@goodeggs/toolkit`:
 
 ```sh
 yarn add --dev @goodeggs/toolkit
 ```
 
-Replace any lint and formatting/fix scripts in your `package.json` with the goodeggs-toolkit equivalents; for example:
+Finally, replace any lint and formatting/fix scripts in your `package.json` with the equivalents from `goodeggs-toolkit`; for example:
 
 ```diff
-  {
-    // ...
-    "scripts": {
+{
+  // ...
+  "scripts": {
 -     "lint": "eslint '**/*.js'",
 +     "lint": "getk run lint-es",
 -     "fmt": "eslint --fix '**/*.js'",
 +     "fmt": "getk run fmt-es",
-    },
-    // ...
-  }
+  },
+  // ...
+}
 ```
+---
+</details>
 
-#### Upgrade `eslint-plugin-goodeggs` and install peer dependencies (not recommended)
+<details>
+<summary>Upgrade `eslint-plugin-goodeggs` and install peer dependencies (unsupported)</summary>
 
-Remove all eslint and prettier dependencies from your project (`eslint`, `eslint-babel`, `eslint-plugin-*`, `eslint-config-*` `prettier`, etc.).
+---
+Remove all eslint and prettier dependencies from your project (`eslint`, `eslint-babel`, `eslint-plugin-*`, `eslint-config-*` `prettier`, etc.):
 
 ```sh
 yarn remove eslint eslint-babel prettier
@@ -68,17 +76,32 @@ Next, resolve any peer dependency warnings output by the previous command by ins
 
 > Note: If you're not using TypeScript, you can safely ignore the `typescript` peer dependency warning.
 
-Finally, update your project's eslint configuration to extend any [the `config`s](https://github.com/goodeggs/eslint-plugin-goodeggs/tree/master/src/config) applicable to your project.
+---
+</details>
 
-Here's a baseline configuration that makes no assumptions about test framework, UI vs Node app, etc.:
+#### 2. Remove the `goodeggs/` prefix from all rules.
 
-```
+Edit your eslint configuration and update all inline overrides (run `grep -R "eslint-disable.*goodeggs\/" .` to find them).
+
+Remove prefixes like so: `goodeggs/import-no-commonjs` becomes `import/no-commonjs`.
+
+#### 3. Update your project's eslint configuration.
+
+Here's a baseline configuration that makes no assumptions about your environment or test framework, etc.:
+
+```json
 {
-  "extends": [
-    "plugin:goodeggs/recommended"
-  ]
+"extends": [
+"plugin:goodeggs/recommended"
+]
 }
 ```
+
+You will likely want to extend this with more rules (e.g. React rules); you can find a full list of configurations [here](https://github.com/goodeggs/eslint-plugin-goodeggs/tree/master/src/config).
+
+#### 4. Fix all lint errors.
+
+This release fixes a slew of broken lint rules and introduces new rules that target problematic code, and so you may need to fix new errors you haven't seen before.
 
 <!-- Put changelog messages that haven't yet been released here! -->
 
