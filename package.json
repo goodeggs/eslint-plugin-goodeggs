@@ -5,6 +5,9 @@
   "description": "An eslint plugin containing linter rules specific to Good Eggs.",
   "license": "MIT",
   "main": "lib/index.js",
+  "files": [
+    "lib/**"
+  ],
   "scripts": {
     "build": "rm -rf lib && babel --out-dir lib --copy-files src",
     "clean": "rm -rf lib",
