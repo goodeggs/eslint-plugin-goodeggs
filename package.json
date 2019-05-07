@@ -18,7 +18,9 @@
     "test": "yarn run lint && yarn run test:unit",
     "test:unit": "jest $JEST_FLAGS"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@goodeggs/prettier-config": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
