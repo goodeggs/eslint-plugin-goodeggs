@@ -891,6 +891,13 @@
   dependencies:
     "@typescript-eslint/typescript-estree" "1.9.0"
 
+"@typescript-eslint/experimental-utils@^1.9.1-alpha.3":
+  version "1.9.1-alpha.10"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-1.9.1-alpha.10.tgz#e7d34051d7db6d38242c3dfef36196c9f2258fca"
+  dependencies:
+    "@typescript-eslint/typescript-estree" "1.9.1-alpha.10+5792aa1"
+    eslint-scope "^4.0.0"
+
 "@typescript-eslint/parser@1.9.0", "@typescript-eslint/parser@^1.8.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-1.9.0.tgz#5796cbfcb9a3a5757aeb671c1ac88d7a94a95962"
@@ -903,6 +910,13 @@
 "@typescript-eslint/typescript-estree@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-1.9.0.tgz#5d6d49be936e96fb0f859673480f89b070a5dd9b"
+  dependencies:
+    lodash.unescape "4.0.1"
+    semver "5.5.0"
+
+"@typescript-eslint/typescript-estree@1.9.1-alpha.10+5792aa1":
+  version "1.9.1-alpha.10"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-1.9.1-alpha.10.tgz#c77886f684325beff00d0453939b5d8a0643b923"
   dependencies:
     lodash.unescape "4.0.1"
     semver "5.5.0"
@@ -1640,9 +1654,11 @@ eslint-plugin-import@^2.17.2:
     read-pkg-up "^2.0.0"
     resolve "^1.10.0"
 
-eslint-plugin-jest@^22.5.1:
-  version "22.5.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.5.1.tgz#a31dfe9f9513c6af7c17ece4c65535a1370f060b"
+eslint-plugin-jest@^22.6.2:
+  version "22.6.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.6.2.tgz#7fded62bfb82c89abd6bf84641f6b2fda72f72fd"
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^1.9.1-alpha.3"
 
 eslint-plugin-lodash@^5.1.0:
   version "5.1.0"
