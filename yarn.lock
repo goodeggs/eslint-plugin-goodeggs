@@ -1652,11 +1652,11 @@ eslint-plugin-jest@^22.15.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^1.13.0"
 
-eslint-plugin-lodash@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-lodash/-/eslint-plugin-lodash-5.1.0.tgz#f7dc6c14f104cacb169a18d17c27d9c015a53924"
+eslint-plugin-lodash@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-lodash/-/eslint-plugin-lodash-5.1.1.tgz#3ad32ab8b4e7c36794a76bfe7f1117ef80536032"
   dependencies:
-    lodash "4.17.11"
+    lodash "^4.17.15"
 
 eslint-plugin-mocha@^5.3.0:
   version "5.3.0"
@@ -2968,10 +2968,6 @@ lodash.sortby@^4.7.0:
 lodash.unescape@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.1.tgz#bf2249886ce514cda112fae9218cdc065211fc9c"
-
-lodash@4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.15:
   version "4.17.15"
