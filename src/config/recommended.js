@@ -1,6 +1,3 @@
-import {configs as typescriptConfigs} from '@typescript-eslint/eslint-plugin';
-import prettierTypescriptConfig from 'eslint-config-prettier/@typescript-eslint';
-
 import * as globs from '../globs';
 
 export default {
@@ -21,6 +18,9 @@ export default {
   ],
   extends: [
     'eslint:recommended',
+    // Must be included after eslint:recommended
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     // https://github.com/RyanZim/eslint-config-problems
     'problems',
     'plugin:import/recommended',
@@ -33,14 +33,6 @@ export default {
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
-      // FIXME(ndhoule): Temporary hack, don't even get me started. This fixes some funky shit
-      // around how configs get merged together.
-      //
-      // tl;dr: This overrides a built-in config distributed with `eslint-plugin-imports`.
-      //
-      // Once eslint-plugin-imports replaces `typescript-eslint-parser` support with the new parser
-      // (`@typescript-eslint/parser`), remove this.
-      'typescript-eslint-parser': ['', ''],
     },
     'import/resolver': {
       node: {
@@ -57,7 +49,6 @@ export default {
     es6: true,
   },
   rules: {
-    camelcase: 'error',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'global-require': 'error',
     'guard-for-in': 'error',
@@ -87,6 +78,25 @@ export default {
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
     'spaced-comment': ['error', 'always'],
+
+    // @typescript-eslint/eslint-plugin
+    // Rules enabled by other plugins that have equivalents in @typescript-eslint/eslint-plugin
+    'no-unused-vars': 'off',
+    'no-use-before-define': 'off',
+    'no-useless-constructor': 'off',
+    // Enabled by @typescript-eslint/recommended, conflicts with prettier
+    '@typescript-eslint/indent': 'off',
+    // We often use empty interfaces for e.g. props factories for React components that don't yet,
+    // but will eventually, accept any props.
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-for-in-array': 'error',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    // Allow unused arguments prefixed with _. Useful for arity-sensitive functions (e.g. Express
+    // middleware).
+    '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+    '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: false}],
+    '@typescript-eslint/no-useless-constructor': 'error',
+    '@typescript-eslint/promise-function-async': 'error',
 
     // eslint-plugin-import
     'import/first': 'error',
@@ -124,44 +134,6 @@ export default {
     'lodash/prop-shorthand': ['error', 'never'],
   },
   overrides: [
-    // TypeScript files
-    {
-      files: ['**/*.{ts,tsx}'],
-      ...typescriptConfigs.recommended,
-      ...prettierTypescriptConfig,
-      rules: {
-        ...typescriptConfigs.recommended.rules,
-
-        // TypeScript recommends against prefixing interfaces with `I`:
-        // https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#names
-        '@typescript-eslint/interface-name-prefix': 'off',
-        // TODO(ndhoule): This rule is great in almost every case except React components (in
-        // particular, stateless functional components), which you're forced to annotate in a
-        // non-natural way. Better document how to annotate in this case.
-        '@typescript-eslint/explicit-function-return-type': ['error', {allowExpressions: true}],
-        '@typescript-eslint/member-naming': 'error',
-        '@typescript-eslint/member-ordering': 'error',
-        // In practice, we use empty interfaces for factories that generate props for React
-        // components with as-of-yet empty Props types.
-        '@typescript-eslint/no-empty-interface': 'off',
-        '@typescript-eslint/no-for-in-array': 'error',
-        // TODO(ndhoule): Consider enabling this rule:
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-require-imports.md
-        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-        '@typescript-eslint/no-unused-vars': 'error',
-        '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: true}],
-        // TODO(ndhoule): Currently broken; enable once fixed
-        // https://github.com/typescript-eslint/typescript-eslint/issues/227
-        // '@typescript-eslint/promise-function-async': 'error',
-
-        // FIXME(ndhoule): This rule false positives too frequently in TypeScript files to be useful
-        // right now.
-        'import/named': 'off',
-
-        ...prettierTypescriptConfig.rules,
-      },
-    },
-
     // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
     {
       files: ['*.config.js', '.*rc.js'],
@@ -172,6 +144,7 @@ export default {
         // Node does not support ES modules; because these files are not transpiled, permit use
         // of `require`. (Ideally prohibit ES6 module syntax, but `eslint-plugin-import` doesn't
         // support this.)
+        '@typescript-eslint/no-var-requires': 'off',
         'global-require': 'off',
         'import/no-commonjs': 'off',
       },
