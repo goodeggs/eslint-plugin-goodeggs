@@ -5,3 +5,4 @@ export {default as mocha} from './mocha';
 export {default as ops} from './ops';
 export {default as react} from './react';
 export {default as recommended} from './recommended';
+export {default as typescript} from './typescript';
