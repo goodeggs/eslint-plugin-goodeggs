@@ -1,4 +1,3 @@
-/* eslint-disable goodeggs/import-no-commonjs,no-console */
 const config = require('@goodeggs/prettier-config');
 
 module.exports = config;

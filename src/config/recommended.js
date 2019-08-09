@@ -3,9 +3,6 @@ import * as globs from '../globs';
 export default {
   parser: 'babel-eslint',
   plugins: [
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
-    '@typescript-eslint',
     // https://github.com/babel/eslint-plugin-babel
     'babel',
     // https://github.com/benmosher/eslint-plugin-import
@@ -18,25 +15,18 @@ export default {
   ],
   extends: [
     'eslint:recommended',
-    // Must be included after eslint:recommended
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
     // https://github.com/RyanZim/eslint-config-problems
     'problems',
     'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:lodash/recommended',
     'prettier',
     'plugin:prettier/recommended',
     'prettier/babel',
   ],
   settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+        extensions: ['.js', '.jsx', '.json'],
         moduleDirectory: [
           'node_modules', // default
           'src', // used by apps like garbanzo
@@ -78,25 +68,6 @@ export default {
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
     'spaced-comment': ['error', 'always'],
-
-    // @typescript-eslint/eslint-plugin
-    // Rules enabled by other plugins that have equivalents in @typescript-eslint/eslint-plugin
-    'no-unused-vars': 'off',
-    'no-use-before-define': 'off',
-    'no-useless-constructor': 'off',
-    // Enabled by @typescript-eslint/recommended, conflicts with prettier
-    '@typescript-eslint/indent': 'off',
-    // We often use empty interfaces for e.g. props factories for React components that don't yet,
-    // but will eventually, accept any props.
-    '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-    // Allow unused arguments prefixed with _. Useful for arity-sensitive functions (e.g. Express
-    // middleware).
-    '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
-    '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: false}],
-    '@typescript-eslint/no-useless-constructor': 'error',
-    '@typescript-eslint/promise-function-async': 'error',
 
     // eslint-plugin-import
     'import/first': 'error',
@@ -144,7 +115,6 @@ export default {
         // Node does not support ES modules; because these files are not transpiled, permit use
         // of `require`. (Ideally prohibit ES6 module syntax, but `eslint-plugin-import` doesn't
         // support this.)
-        '@typescript-eslint/no-var-requires': 'off',
         'global-require': 'off',
         'import/no-commonjs': 'off',
       },
