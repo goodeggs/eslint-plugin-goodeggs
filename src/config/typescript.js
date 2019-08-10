@@ -28,18 +28,8 @@ export default {
     '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
     '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: false}],
     '@typescript-eslint/no-useless-constructor': 'error',
+    // This rule is useful, but it duplicates the functionality offered by `import/no-commonjs`.
+    '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/promise-function-async': 'error',
   },
-  overrides: [
-    // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
-    {
-      files: ['*.config.js', '.*rc.js'],
-      env: {
-        node: true,
-      },
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-  ],
 };
