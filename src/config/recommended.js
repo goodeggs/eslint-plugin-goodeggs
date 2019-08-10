@@ -26,7 +26,6 @@ export default {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.json'],
         moduleDirectory: [
           'node_modules', // default
           'src', // used by apps like garbanzo
