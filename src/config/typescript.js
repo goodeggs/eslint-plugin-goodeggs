@@ -11,16 +11,6 @@ export default {
     'plugin:import/typescript',
     'prettier/@typescript-eslint',
   ],
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      node: {
-        extensions: ['.ts', '.tsx'],
-      },
-    },
-  },
   rules: {
     camelcase: 'off',
     'no-unused-vars': 'off',
