@@ -1,6 +1,6 @@
 // https://github.com/yannickcr/eslint-plugin-react
 export default {
-  plugins: ['prettier', 'react'],
+  plugins: ['prettier', 'react', 'react-hooks'],
   extends: ['plugin:import/react', 'plugin:react/recommended', 'prettier/react'],
   settings: {
     react: {
@@ -46,5 +46,7 @@ export default {
     'react/prop-types': 'off', // We leverage typing via Flow and TypeScript, which are redundant with prop types.
     'react/self-closing-comp': 'error',
     'react/void-dom-elements-no-children': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
   },
 };
