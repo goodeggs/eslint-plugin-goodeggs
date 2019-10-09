@@ -22,7 +22,7 @@
     "@goodeggs/prettier-config": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.4.4",
+    "@babel/cli": "7.6.3",
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
