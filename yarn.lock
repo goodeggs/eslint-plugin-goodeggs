@@ -1591,9 +1591,9 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.1.0.tgz#e6f678ba367fbd1273998d5510f76f004e9dce7b"
+eslint-config-prettier@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.5.0.tgz#aaf9a495e2a816865e541bfdbb73a65cc162b3eb"
   dependencies:
     get-stdin "^6.0.0"
 
@@ -1627,7 +1627,7 @@ eslint-plugin-flowtype@^3.13.0:
   dependencies:
     lodash "^4.17.15"
 
-"eslint-plugin-goodeggs@file:./.":
+"eslint-plugin-goodeggs@file:.":
   version "8.0.0-beta.7"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
