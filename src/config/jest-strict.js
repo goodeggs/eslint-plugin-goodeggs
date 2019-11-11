@@ -11,11 +11,9 @@ export default {
   plugins: ['goodeggs', 'jest'],
   extends: ['plugin:goodeggs/jest', 'plugin:jest/style'],
   rules: {
-    'jest/expect-expect': 'warn',
     'jest/lowercase-name': 'error',
-    'jest/no-alias-methods': 'error',
     'jest/no-truthy-falsy': 'error',
-    'jest/require-tothrow-message': 'error',
+    'jest/require-to-throw-message': 'error',
     'jest/valid-expect': 'error',
   },
   overrides: [

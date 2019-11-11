@@ -20,14 +20,13 @@ export default {
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
   rules: {
-    // TODO(ndhoule): Double-check--does this work with TypeScript? And do we need to pass
-    // `settings.flowVersion` to make it work with Flow?
     'react/boolean-prop-naming': 'warn',
     'react/button-has-type': 'error',
     'react/jsx-boolean-value': 'error',
     'react/jsx-filename-extension': ['error', {extensions: ['.jsx', '.tsx']}],
     'react/jsx-fragments': 'error',
     'react/jsx-no-bind': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
     'react/no-access-state-in-setstate': 'error', // TODO(ndhoule): Consider making this an error
     'react/no-array-index-key': 'warn', // TODO(ndhoule): Consider making this an error

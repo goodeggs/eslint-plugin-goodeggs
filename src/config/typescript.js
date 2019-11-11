@@ -13,15 +13,21 @@ export default {
   ],
   rules: {
     camelcase: 'off',
+    'no-empty-function': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'no-useless-constructor': 'off',
     // Enabled by @typescript-eslint/recommended, conflicts with prettier
     '@typescript-eslint/indent': 'off',
+    // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss whether or not this is
+    // worthwhile; I've never had it cause any pain, but perhaps others have?
+    '@typescript-eslint/no-empty-function': 'off',
     // We often use empty interfaces for e.g. props factories for React components that don't yet,
     // but will eventually, accept any props.
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-for-in-array': 'error',
+    // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss enabling it permanently.
+    '@typescript-eslint/no-this-alias': 'off',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error',
     // Allow unused arguments prefixed with _. Useful for arity-sensitive functions (e.g. Express
     // middleware).
