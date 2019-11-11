@@ -23,17 +23,6 @@ export default {
     'plugin:prettier/recommended',
     'prettier/babel',
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        moduleDirectory: [
-          'node_modules', // default
-          'src', // used by apps like garbanzo
-          '.', // used by apps that use the /local_modules pattern
-        ],
-      },
-    },
-  },
   env: {
     es6: true,
   },
