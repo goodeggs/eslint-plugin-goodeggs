@@ -14,6 +14,7 @@ This is a significant update with several breaking changes.
 - Ops-specific rules:
   - Move ops-specific configuration into its own config (`plugin:goodeggs/ops`)
   - Disable new-cap rules `dryrain(Api).DT_*` invocations
+- We no longer configure the `eslint-plugin-import` module resolver. See below for a migration.
 
 ### Migration Guide
 
@@ -101,7 +102,32 @@ Here's a baseline configuration that makes no assumptions about your environment
 
 You will likely want to extend this with more rules (e.g. React rules); you can find a full list of configurations [here](https://github.com/goodeggs/eslint-plugin-goodeggs/tree/master/src/config).
 
-#### 4. Fix all lint errors.
+#### 4. Configure `eslint-plugin-import`'s module resolver with your project's module settings.
+
+We no longer automatically configure `eslint-plugin-goodeggs` with custom module directories. Module aliases are configured via Webpack, Babel, and other similar tools and specifying them in this repository has led to a tragedy-of-the-commons configuration that assumes implementation details and doesn't work particularly well for consumers.
+
+If you use [`babel-plugin-module-resolver`](https://github.com/tleunen/babel-plugin-module-resolver) to create custom imports (e.g. in Garbanzo, imports like `nettle/*`), you must configure [`eslint-import-resolver-babel-module`](https://github.com/tleunen/eslint-import-resolver-babel-module) in your project.
+
+Consumers that depend on the `local_modules` pattern provided by `babel-plugin-local-modules` should update their ESLint configuration to include the following configuration:
+
+```js
+settings: {
+  'import/resolver': {
+    node: {
+      moduleDirectory: [
+        // Default
+        'node_modules',
+        // Adds anything in the root directory (including local_modules) to the module lookup path
+        '.',
+      ],
+    },
+  },
+},
+```
+
+For more information, see [this commit](https://github.com/goodeggs/eslint-plugin-goodeggs/commit/f398a340ef0f3077fa70f12f43f4eb0f4da5dc92).
+
+#### 5. Fix all lint errors.
 
 This release fixes a slew of broken lint rules and introduces new rules that target problematic code, and so you may need to fix new errors you haven't seen before.
 
