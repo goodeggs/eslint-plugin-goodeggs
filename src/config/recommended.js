@@ -70,7 +70,7 @@ export default {
     'import/order': [
       'error',
       {
-        'newlines-between': 'always-and-inside-groups',
+        'newlines-between': 'always',
         groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
       },
     ],
