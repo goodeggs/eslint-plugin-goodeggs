@@ -67,6 +67,7 @@ export default {
     'import/no-dynamic-require': 'error',
     'import/no-extraneous-dependencies': 'error',
     'import/no-mutable-exports': 'error',
+    'import/no-useless-path-segments': ['error', {noUselessIndex: true}],
     'import/order': [
       'error',
       {
