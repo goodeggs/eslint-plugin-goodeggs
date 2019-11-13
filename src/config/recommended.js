@@ -12,6 +12,8 @@ export default {
     // https://github.com/prettier/eslint-plugin-prettier
     // https://github.com/prettier/eslint-config-prettier
     'prettier',
+    // https://github.com/sindresorhus/eslint-plugin-unicorn
+    'unicorn',
   ],
   extends: [
     'eslint:recommended',
@@ -92,6 +94,9 @@ export default {
     'lodash/prefer-thru': 'off',
     'lodash/preferred-alias': 'error',
     'lodash/prop-shorthand': ['error', 'never'],
+
+    // eslint-plugin-unicorn
+    'unicorn/no-abusive-eslint-disable': 'error',
   },
   overrides: [
     // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
