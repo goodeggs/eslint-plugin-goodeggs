@@ -1,129 +1,60 @@
 # eslint-plugin-goodeggs
 
-A plugin containing ESLint rules specific to Good Eggs.
+A shared ESLint plugin and configurations used by Good Eggs projects.
 
 ## Installation
 
-1.  `yarn add --dev eslint eslint-plugin-goodeggs`
-2.  add an `eslintConfig` section to `package.json`:
+1. Install the plugin via `yarn add --dev eslint-plugin-goodeggs`
 
-```json
-   "eslintConfig": {
-     "plugins": [
-       "goodeggs"
-     ],
-     "extends": [
-       "plugin:goodeggs/goodeggs"
-     ],
-     "env": {
-       "node": true
-     }
-   }
+2. Install all of the peer dependencies listed in [`package.json#peerDependencies`](package.json), making sure you satisfy the peer dependencies fully by using the specified package version ranges.
+
+3. Create an ESLint configuration file at `.eslintrc.js`:
+
+```js
+module.exports = {
+  extends: ['plugin:goodeggs/recommended'],
+};
 ```
 
-3.  add linting scripts:
+If your project uses Jest or Mocha, or is written in TypeScript, you'll want to add additional presets to the `extends` array.  See [`src/config/index.js`](src/config/index.js) for a full list of configurations.
+
+4. Install our shared Prettier configuration via `yarn add --dev @goodeggs/prettier-config` and create a Prettier configuration file at `.prettierrc.js`
+
+```js
+module.exports = require('@goodeggs/prettier-config');
+```
+
+5. Add linting scripts to your project's `package.json`:
 
 ```js
 "scripts": {
-  "lint": "yarn run lint:src",
-  "lint:src": "yarn run lint:src:glob '**/*.{js,jsx,ts,tsx}'",
-  "lint:src:glob": "eslint --ignore-path .eslintignore",
-  "fmt": "yarn fmt:src",
-  "fmt:src": "yarn run fmt:src:glob '**/*.{js,jsx,ts,tsx}'",
-  "fmt:src:glob": "eslint --ignore-path .eslintignore --fix"
+  "lint": "yarn run lint:base .",
+  "lint:base": "eslint --ext .js,.jsx,.ts,.tsx --cache --report-unused-disable-directives",
+  "lint:fix": "yarn run lint:fix:base ."
+  "lint:fix:base": "yarn run lint:base --fix"
 }
 ```
-
-4.  ensure lint is run [during CI](https://github.com/goodeggs/best-practices/glob/master/javascript/build-deploy-modules.md#travisyml):
-
-```js
-"scripts": {
-  "test": "yarn run lint && yarn run test:mocha"
-}
-```
-
-## Prettier
-
-To enable automatic code formatting via [Prettier](https://prettier.io/), install `eslint-plugin-goodeggs` as described above and follow these directions.
-
-### Installation
-
-Next, install prettier and its eslint plugins:
-
-```sh
-yarn add --dev --exact prettier
-yarn add --dev eslint-config-prettier eslint-plugin-prettier
-```
-
-Next, create a `.prettierrc.js` and use our shared config:
-
-```js
-module.exports = require('eslint-plugin-goodeggs/prettier-config');
-```
-
-Modify `package.json`'s `eslintConfig#extends` section to disable any ESLint formatting rules and enable linter errors on unformatted code:
-
-```js
-"eslintConfig": {
-  // ...
-  "extends": [
-    // ...
-    // Note that the order here matters
-    "prettier",
-    "plugin:prettier/recommended"
-  ],
-}
-```
-
-Next, add formatting to your `package.json`'s scripts field:
-
-```js
-"scripts": {
-  "lint": "yarn run lint:src && yarn run lint:prettier",
-  "lint:src": "yarn run lint:src:glob '**/*.{js,jsx,ts,tsx}'",
-  "lint:src:glob": "eslint --ignore-path .eslintignore",
-  "lint:prettier": "yarn run lint:prettier:glob '**/*.{yml,json,md,gql,graphql,flow}'",
-  "lint:prettier:glob": "prettier --ignore-path .eslintignore --list-different",
-  "fmt": "yarn run fmt:src && yarn run fmt:prettier",
-  "fmt:src": "yarn run fmt:src:glob '**/*.{js,jsx,ts,tsx}'",
-  "fmt:src:glob": "eslint --ignore-path .eslintignore --fix",
-  "fmt:prettier": "yarn run fmt:prettier:glob '**/*.{yml,json,md,gql,graphql,flow}'",
-  "fmt:prettier:glob": "prettier --ignore-path .eslintignore --write"
-}
-```
-
-> Note that here, we're pointing prettier at our existing `.eslintignore` file rather than creating a `.prettierignore` file. This is generally what you
-> want, especially when using `eslint-plugin-prettier`--prettier should act as a drop-in replacement for eslint's style rules. If this doesn't work for your
-> use case, though, there's nothing wrong with creating a `.prettierignore` file--just know that you'll want to keep it in sync with your `.eslintignore` file.
 
 ### Editor Plugins
 
-You'll likely want to enable a [Prettier editor integration](https://prettier.io/docs/en/editors.html) for your editor so your code is automatically formatted on save.
+You'll likely want to enable an [ESLint editor integration](https://eslint.org/docs/user-guide/integrations) for your editor so your code is automatically formatted on save.
 
-### Use with `lint-staged`
+### Use With `lint-staged`
 
-* Ensure we run `prettier` and any other linters e.g. eslint, stylelint to staged files prior to commit
-* Allows us to get instant feedback on style fail prior to push & CI
-* Use with pre-commit git hook (see [best practice](https://github.com/goodeggs/best-practices/blob/master/javascript/git-hooks.md))
-* Add as a dev dependency
-* Good example [`goodeggs-stats`](https://github.com/goodeggs/goodeggs-stats/blob/master/package.json)
+Consider using this setup in conjunction with [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky) to ensure that linting is run on staged files prior to commit.
 
-e.g. in `package.json`
+For example, the following configuration files will run lint and fix any fixable errors prior to commit:
 
-```json
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
-  }
-},
-"lint-staged": {
-  "*.{js,jsx,ts,tsx}": [
-    "yarn run fmt:src:glob",
-    "git add"
-  ],
-  "*.{yml,json,md,gql,graphql,flow}": [
-    "yarn run fmt:prettier:glob",
-    "git add"
-  ]
-}
+```js
+// lint-staged.config.js
+module.exports = {
+  '*.{js,jsx,ts,tsx}': ['yarn run lint:fix:base', 'git add'],
+};
+
+// .huskyrc.js
+module.exports = {
+  hooks: {
+    'pre-commit': 'lint-staged',
+  },
+};
 ```
