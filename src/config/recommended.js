@@ -55,6 +55,10 @@ export default {
     'no-unneeded-ternary': 'error',
     'no-unused-expressions': 'error',
     'no-useless-concat': 'error',
+    // This rule is part of the `eslint:recommended` ruleset, but will soon be removed because it
+    // reports false positives.
+    // https://github.com/eslint/eslint/issues/11899#issuecomment-541714523
+    'require-atomic-updates': 'off',
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
     'spaced-comment': ['error', 'always'],
