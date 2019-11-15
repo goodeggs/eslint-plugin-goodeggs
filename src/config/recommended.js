@@ -54,6 +54,9 @@ export default {
     'no-throw-literal': 'error',
     'no-unneeded-ternary': 'error',
     'no-unused-expressions': 'error',
+    // Allow unused arguments and variables prefixed with _. Useful for arity-sensitive functions
+    // (e.g. Express middleware).
+    'no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
     'no-useless-concat': 'error',
     // This rule is part of the `eslint:recommended` ruleset, but will soon be removed because it
     // reports false positives.
