@@ -1,3 +1,5 @@
+import recommended from './recommended';
+
 export default {
   overrides: [
     {
@@ -32,9 +34,7 @@ export default {
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss enabling it permanently.
         '@typescript-eslint/no-this-alias': 'off',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-        // Allow unused arguments prefixed with _. Useful for arity-sensitive functions (e.g. Express
-        // middleware).
-        '@typescript-eslint/no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+        '@typescript-eslint/no-unused-vars': ['error', recommended.rules['no-unused-vars'][1]],
         '@typescript-eslint/no-use-before-define': ['error', {functions: false, typedefs: false}],
         '@typescript-eslint/no-useless-constructor': 'error',
         // This rule is useful, but it duplicates the functionality offered by `import/no-commonjs`.
