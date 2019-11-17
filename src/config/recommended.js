@@ -5,6 +5,8 @@ export default {
   plugins: [
     // https://github.com/babel/eslint-plugin-babel
     'babel',
+    // https://github.com/mysticatea/eslint-plugin-eslint-comments
+    'eslint-comments',
     // https://github.com/benmosher/eslint-plugin-import
     'import',
     // https://github.com/wix/eslint-plugin-lodash
@@ -19,6 +21,7 @@ export default {
     'eslint:recommended',
     // https://github.com/RyanZim/eslint-config-problems
     'problems',
+    'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:lodash/recommended',
     'prettier',
@@ -29,6 +32,9 @@ export default {
     es6: true,
   },
   rules: {
+    /*
+     * Built-in rules
+     */
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'global-require': 'error',
     'guard-for-in': 'error',
@@ -66,7 +72,37 @@ export default {
     'operator-assignment': ['error', 'always'],
     'spaced-comment': ['error', 'always'],
 
-    // eslint-plugin-import
+    /*
+     * eslint-plugin-eslint-comments
+     */
+    // Allow `eslint-disable`s at the top of a file, but prevent users from forgetting to close an
+    // `eslint-disable` in the middle of a file. We should consider whether or not we actually want
+    // to allow whole-file `eslint-disable`s, but in practice we do it frequently for sometimes-
+    // legitimate reasons.
+    'eslint-comments/disable-enable-pair': ['error', {allowWholeFile: true}],
+    // Restrict the use of eslint directives in files. ESLint rules should be specified in the
+    // ESLint configuration as much as possible; this prevents, for example, users from changing
+    // rules for a specific file (e.g. `/* eslint no-undef: warn */`), but allows users to disable
+    // rules for a region of a file.
+    'eslint-comments/no-use': [
+      'error',
+      {
+        allow: [
+          'eslint-disable',
+          'eslint-disable-line',
+          'eslint-disable-next-line',
+          'eslint-enable',
+          // Eventually, we should force users to specify all globals in their project's ESLint
+          // configuration file(s).
+          'global',
+          'globals',
+        ],
+      },
+    ],
+
+    /*
+     * eslint-plugin-import
+     */
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
@@ -85,7 +121,9 @@ export default {
       },
     ],
 
-    // eslint-plugin-lodash
+    /*
+     * eslint-plugin-lodash
+     */
     'lodash/chaining': ['error', 'always', 2],
     'lodash/import-scope': ['error', 'full'],
     'lodash/matches-prop-shorthand': ['error', 'never'],
@@ -102,12 +140,13 @@ export default {
     'lodash/preferred-alias': 'error',
     'lodash/prop-shorthand': ['error', 'never'],
 
-    // eslint-plugin-unicorn
+    /*
+     * eslint-plugin-unicorn
+     */
     'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
     'unicorn/expiring-todo-comments': 'warn',
     'unicorn/new-for-builtins': 'error',
-    'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-array-instanceof': 'error',
     'unicorn/no-new-buffer': 'error',
   },
