@@ -103,7 +103,13 @@ export default {
     'lodash/prop-shorthand': ['error', 'never'],
 
     // eslint-plugin-unicorn
+    'unicorn/custom-error-definition': 'error',
+    'unicorn/error-message': 'error',
+    'unicorn/expiring-todo-comments': 'warn',
+    'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
+    'unicorn/no-array-instanceof': 'error',
+    'unicorn/no-new-buffer': 'error',
   },
   overrides: [
     // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
