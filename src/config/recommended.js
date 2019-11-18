@@ -77,6 +77,28 @@ export default {
     // to allow whole-file `eslint-disable`s, but in practice we do it frequently for somtimes-
     // legitimate reasons.
     'eslint-comments/disable-enable-pair': ['error', {allowWholeFile: true}],
+    // A list of ESLint rules that developers are permitted to disable using eslint directives.
+    'eslint-comments/no-restricted-disable': [
+      'error',
+      // Don't allow any lint rules to be disabled.
+      '*',
+      // Unfortunately, ts-ignore directives are sometimes a necessary evil to work around bugs in
+      // type definitions, missing typedefs, as the most reasonable path toward gradually adopting
+      // TypeScript, etc.
+      '!@typescript-eslint/ban-ts-ignore',
+      // A bug in `eslint-plugin-import` results in false errors in TypeScript files.
+      // https://github.com/benmosher/eslint-plugin-import/issues/1282
+      '!import/named',
+      // We have a habit of permitting console statements in scripts, frontend code, etc. Until we
+      // establish solid conventions around when console methods are permitted and when they are
+      // not, permit developers to disable this lint rule inline.
+      '!no-console',
+      // Sometimes you need to use non-camelcase casing; this happens most commonly when dealing
+      // with third-party APIs, where inbound data includes properties in snake case, or outbound
+      // data is expected in snake case.
+      '@typescript-eslint/camelcase',
+      'camelcase',
+    ],
     // Restrict the use of eslint directives in files. ESLint rules should be specified in the
     // ESLint configuration as much as possible; this prevents, for example, users from changing
     // rules for a specific file (e.g. `/* eslint no-undef: warn */`), but allows users to disable
