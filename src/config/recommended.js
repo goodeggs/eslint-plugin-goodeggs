@@ -143,7 +143,6 @@ export default {
     /*
      * eslint-plugin-unicorn
      */
-    'unicorn/custom-error-definition': 'error',
     'unicorn/error-message': 'error',
     'unicorn/expiring-todo-comments': 'warn',
     'unicorn/new-for-builtins': 'error',
