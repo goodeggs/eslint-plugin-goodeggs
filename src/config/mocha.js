@@ -15,6 +15,9 @@ export default {
     // Enabled in `mocha/recommended`; contradicts our best practices which dictate that we prefer
     // multiple small/focused hooks over one big one that does many things.
     'mocha/no-sibling-hooks': 'off',
+    // Unfortunately, this rule is autofixable, which just removes `.skip`s. This makes it unsafe in
+    // existing repositories.
+    'mocha/no-skipped-tests': 'off',
     'mocha/no-top-level-hooks': 'error',
   },
 };
