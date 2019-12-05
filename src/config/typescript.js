@@ -19,6 +19,10 @@ export default {
       rules: {
         camelcase: 'off',
         'no-empty-function': 'off',
+        // This rule is enabled by `eslint-plugin-problems`; we replace it here with
+        // `@typescript-eslint/return-await`, which does the same thing as this rule but with better
+        // type information.
+        'no-return-await': 'off',
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
         'no-useless-constructor': 'off',
@@ -41,6 +45,7 @@ export default {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/promise-function-async': 'error',
         '@typescript-eslint/restrict-template-expressions': 'error',
+        '@typescript-eslint/return-await': 'error',
       },
     },
   ],
