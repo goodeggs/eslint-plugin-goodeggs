@@ -34,6 +34,7 @@ export default {
         // We often use empty interfaces for e.g. props factories for React components that don't yet,
         // but will eventually, accept any props.
         '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/no-extra-non-null-assertion': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss enabling it permanently.
         '@typescript-eslint/no-this-alias': 'off',
