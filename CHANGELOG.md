@@ -1,5 +1,11 @@
 <!-- Put changelog messages that haven't yet been released above this! -->
 
+# v8.1.0
+
+- TypeScript: Replace `no-return-await` with `@typescript/eslint/return-await`
+- TypeScript: Prohibit unnecessary non-null assertions (e.g. `foo!!.bar`)
+- TypeScript: Prohibit plus operators (`+` and `+=`) on different types (e.g. prhibit adding a string to a number)
+
 # v8.0.0
 
 This is a significant update with several breaking changes.
