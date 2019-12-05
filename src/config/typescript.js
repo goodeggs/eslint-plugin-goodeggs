@@ -40,6 +40,7 @@ export default {
         // This rule is useful, but it duplicates the functionality offered by `import/no-commonjs`.
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/promise-function-async': 'error',
+        '@typescript-eslint/restrict-plus-operands': ['error', {checkCompoundAssignments: true}],
         '@typescript-eslint/restrict-template-expressions': 'error',
       },
     },
