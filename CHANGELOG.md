@@ -35,6 +35,11 @@ Uninstall `eslint`, `babel-eslint`, `prettier`, `eslint-plugin-goodeggs`, and an
 
 Next, install `@goodeggs/toolkit` and replace any `eslint` scripts with `getk run lint-es <glob>` and `getk run fix-es <glob>`.
 
+Finally, change the contents of `.prettierrc.js` to:
+```js
+module.exports = require('@goodeggs/prettier-config');
+```
+
 ### 2. Remove the `goodeggs/` prefix from all rules.
 
 Edit your ESLint configuration and any inline overrides (run `grep -R "eslint-disable.*goodeggs\/" .` to find them).
