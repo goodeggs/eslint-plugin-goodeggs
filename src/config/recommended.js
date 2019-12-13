@@ -35,6 +35,7 @@ export default {
     /*
      * Built-in rules
      */
+    camelcase: 'error',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'global-require': 'error',
     'guard-for-in': 'error',
