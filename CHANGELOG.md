@@ -37,7 +37,7 @@ Next, install `@goodeggs/toolkit` and replace any `eslint` scripts with `getk ru
 
 Finally, change the contents of `.prettierrc.js` to:
 ```js
-module.exports = require('@goodeggs/prettier-config');
+module.exports = require('@goodeggs/toolkit/config/prettier');
 ```
 
 ### 2. Remove the `goodeggs/` prefix from all rules.
