@@ -1,5 +1,9 @@
 # vNEXT
 
+<!-- Put changelog messages that haven't yet been released above this! -->
+
+# v9.0.0
+
 ## Removed rules:
 
 - [`@typescript-eslint/ban-ts-ignore` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/ban-ts-ignore.md): Replaced by the newer, stricter `ban-ts-comment` rule. If your code overrides this rule, something like `ag -Q '@typescript-eslint/ban-ts-ignore' -l --print0 | xargs -0 sed -i '' 's|@typescript-eslint/ban-ts-ignore|@typescript-eslint/ban-ts-comment|g'` should fix most instances of it.
@@ -17,8 +21,6 @@
 - [`@typescript-eslint/no-throw-literal` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/no-throw-literal.md)
 - [`@typescript-eslint/prefer-as-const` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/prefer-as-const.md)
 - [`@typescript-eslint/no-unnecessary-boolean-literal-compare` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md)
-
-<!-- Put changelog messages that haven't yet been released above this! -->
 
 # v8.1.0
 
