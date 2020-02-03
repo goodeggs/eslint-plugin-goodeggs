@@ -63,7 +63,7 @@ export default {
     'no-unused-expressions': 'error',
     // Allow unused arguments and variables prefixed with _. Useful for arity-sensitive functions
     // (e.g. Express middleware).
-    'no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+    'no-unused-vars': ['error', {argsIgnorePattern: '^_', caughtErrors: 'all'}],
     'no-useless-concat': 'error',
     // This rule is part of the `eslint:recommended` ruleset, but will soon be removed because it
     // reports false positives.
@@ -71,6 +71,9 @@ export default {
     'require-atomic-updates': 'off',
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
+    // TODO(ndhoule): eslint-plugin-problems defines this as a problem, but lower it to a warn for
+    // now to give consumers time to update their code.
+    'prefer-object-spread': 'warn',
     'spaced-comment': ['error', 'always'],
 
     /*
