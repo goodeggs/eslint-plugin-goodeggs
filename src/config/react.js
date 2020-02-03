@@ -30,7 +30,6 @@ export default {
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
     'react/no-access-state-in-setstate': 'error', // TODO(ndhoule): Consider making this an error
-    'react/no-adjacent-inline-elements': 'warn',
     'react/no-array-index-key': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-children-prop': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-danger': 'warn',

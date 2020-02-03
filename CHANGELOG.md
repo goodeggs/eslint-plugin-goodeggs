@@ -2,6 +2,10 @@
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
+# v9.0.1
+
+- Disable [`react/no-adjacent-inline-elements` (warn)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/no-adjacent-inline-elements.md), which sometimes errors out.
+
 # v9.0.0
 
 ## Removed rules:
