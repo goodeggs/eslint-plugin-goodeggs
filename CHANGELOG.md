@@ -6,6 +6,8 @@
 
 ## New rules:
 
+- [`react/jsx-no-script-url` (error)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/jsx-no-script-url.md)
+- [`react/no-adjacent-inline-elements` (warn)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/no-adjacent-inline-elements.md)
 - [`prefer-object-spread`: (warn)](https://eslint.org/docs/rules/prefer-object-spread) - Warn for now to give consumers time to update their code.
 - [`no-unused-vars`: enable `caughtErrors: 'all'` (error)](https://eslint.org/docs/rules/no-unused-vars#caughterrors) - Enforce use of the error parameter in `catch` blocks
 - [`@typescript-eslint/ban-ts-comment` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/ban-ts-comment.md)
