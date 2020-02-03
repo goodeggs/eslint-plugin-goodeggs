@@ -26,9 +26,11 @@ export default {
     'react/jsx-filename-extension': ['error', {extensions: ['.jsx', '.tsx']}],
     'react/jsx-fragments': 'error',
     'react/jsx-no-bind': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/jsx-no-script-url': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
     'react/no-access-state-in-setstate': 'error', // TODO(ndhoule): Consider making this an error
+    'react/no-adjacent-inline-elements': 'warn',
     'react/no-array-index-key': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-children-prop': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-danger': 'warn',
