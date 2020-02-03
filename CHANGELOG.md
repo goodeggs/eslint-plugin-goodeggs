@@ -6,6 +6,8 @@
 
 ## New rules:
 
+- [`prefer-object-spread`: (warn)](https://eslint.org/docs/rules/prefer-object-spread) - Warn for now to give consumers time to update their code.
+- [`no-unused-vars`: enable `caughtErrors: 'all'` (error)](https://eslint.org/docs/rules/no-unused-vars#caughterrors) - Enforce use of the error parameter in `catch` blocks
 - [`@typescript-eslint/ban-ts-comment` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/ban-ts-comment.md)
 - [`@typescript-eslint/default-param-last` (warn)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/default-param-last.md)
 - [`@typescript-eslint/no-extra-semi` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/no-extra-semi.md)
