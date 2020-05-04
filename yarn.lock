@@ -1120,8 +1120,8 @@ acorn-walk@^6.0.1:
   resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-6.1.1.tgz#d363b66f5fac5f018ff9c3a1e7b6f8e310cc3913"
 
 acorn@^6.0.1:
-  version "6.0.6"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-6.0.6.tgz#cd75181670d5b99bdb1b1c993941d3a239ab1f56"
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
 
 acorn@^7.1.0:
   version "7.1.0"
@@ -1943,8 +1943,8 @@ eslint-plugin-flowtype@^3.13.0:
   dependencies:
     lodash "^4.17.15"
 
-"eslint-plugin-goodeggs@file:./.":
-  version "9.0.1"
+"eslint-plugin-goodeggs@file:.":
+  version "10.0.0"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
 
