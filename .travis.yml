@@ -11,8 +11,8 @@ env:
   global:
     - PATH="$HOME/.yarn/bin:$PATH"
     - YARN_VERSION="1.9.4"
-    # NODE_ENV:
-    - secure: "ii2XIlDeeSCzKlTpBoZdFkVQiHdF4hbEL74ITSwkmi/nbxg9Nq7nKi9FdhhxF1EegdehTaYi7zfSipx9F+TnNZRe2AEqy9efZLhRHqtY8nojtH9ldecL0jC0SV/uJQ1xigOU3SXHcWV5wpd7DDS5URUVhsDGe4E+o+KBAKzadmNdohjG80FZ8AdgmUxbTMjJV7yhGd35g2SAaHWoFWVnMfckkBlUbqr+JmuxqbJwQ+Lmu8b3PYh+qYolW7lnUe73mbD5oKi1jgBnAuk82VVhGL7VaAVd2BgXQCbejBxDRhwl0Aty0mYYqbbq5LkioY1uDpQ4hCEh9V7Oo77qdkwBbiyP17lY6A3W0c4MDu8vqzecWYMtlzFLPJ5vT1Qin+LywHjCEGSGAfo4m0dVdMuuzKLp6Wrtfcc/2KuwEiLiucmFHjYWhnBIJpuhCIFpFLbVXMrJyuzrxvxD965qIhaxTSs3cvgha+DVZXe+s8pHp2sajG8Iwvpn3T3ISXoT6xoW7brRpA50Zlcj5W0o/coOiLtQP/u6n09BtB6tkyJpFyQB6qvdX2c+gK+Va7+vFVgiVvASHRWTNW8cvBZYEBn/iva/h5MP5CorPXWTSRlvHtXXWxpLE+p7BeecwKEzyvOQVqePfshdqGgrxPyINyg4WIVmuVjKc/mvaUhNfQPTKyE="
+    # NPM_AUTH:
+    - secure: "nJwBi0gKKf6DCSH4/ihAwhudX0PPHc+cJLXf/Hwm59r97nahTVWrlz1XKdydQrosV2bBSged5YSNA0lBXMQbRPmWHKoUghUtizfJXrDA0Bb3Aly/GIZEA/x5vw0nwAgmgsSwhwtywThRBu94/KOCV+R9CQPDhSLPxjE3c9PbmSxMIn84q/k9kkrAhVBTDbG6mM3iQDf77aYYSQBl79VVrTjsDzG9zmIIbCwsnSOGyfay5CdfI2DvCdgRdq6iKKYYfCgq4BJTtXAEF9PWirjB5yLV0xLE+j4LLBNFCiNoc2a6YI+lSy2E70rZ3m0LcPjs/5mnfz6dW3GWDmxvNrrckaxYlKR9c2FM+xgzJ+SFxIosSHARgJbZKMUgv5/S+MH0nY5R09TuWOc+svpxfWHgs+yh624jkzBkVAyNwN8679zufcsuQJMpKQcUybmb8QLxEDyAt720ffM+kQuhK/oTqvnyKXXXR2fb5Wnru53/mZm2aIAZOCXWHV4Ozw2V4V7ydsAo5+vVmzNUZGFO1uP3yIHZ4EV5i5ljfRVGV/8tc0HDJMfAr2cTl91BBW+oshPY9K2dML32oE3JoQq9nAv4PptKrWFhkzDpw7ToCX8IltevOUTPTLwrpSJQuzWWQIJecDOBsNkYehPDOPTFyL+IBNNd6Uq/6koBZvxB5Z88NZQ="
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version "${YARN_VERSION}"
