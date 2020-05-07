@@ -9,6 +9,10 @@
     "lib/**/*",
     "prettier-config.js"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "build": "yarn run clean && babel --out-dir lib --copy-files src",
     "clean": "rm -rf lib",
