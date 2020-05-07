@@ -40,9 +40,9 @@ jobs:
       if: tag =~ ^v
       script: echo "Publishing to npm registry..."
       deploy:
-        provider: npm
-        email: open-source@goodeggs.com
-        api_key: $NPM_AUTH
+        provider: script
+        script: yarn publish
         skip_cleanup: true
         on:
+          tags: true
           all_branches: true
