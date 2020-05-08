@@ -41,7 +41,7 @@ jobs:
         provider: npm
         email: open-source@goodeggs.com
         api_token:
-          secure: "TAgVve4BD+mnOINjw5zpWBu3VOGA+AoZ4Rj4uwzP8nBT2TUqkodmbbf6DY1Uv7bFD1opG+ABFXjqAxiJP9J4ItuImuUKJnh+iVEFXVU3CWWnXrCPalObH1jOnKr5T/YnWr502dbqanOarJBszqPmPHOewq4o2IjePDDhtKotxQKM7Dg5ATADL1s4+kMarzRuZ1ZFRF2sTnker3+n9FimbvFN/SujPJ4SFsNqBLrB3KhT09TvgsdWYjQn9UaH19oP8D4YUoFBVCoB9cikO4QfS8r9wMUivASlM+R3JH3bYaF8nnZI213+lkJ3TchcbN3tOAq/o0gubGnHccHgF+hSBi2ZlxS8PTb6tGpVW95MEVfy42510iTZsVlXEdymifzlJ+o5UtBHH4ZpyeeWZMoUrlokIDuLqYH9GycOHYwlckqkNr++dfSt1af1XPbEO3iufNSa9BO80oR+V/Cwo17c5FXGQGXvsCqniBwD9VPbJ8KMOydY2Ggn01NDG3/QBul2iajDgu/gtp2Tkwd7Ao/oK2XG/buNWYxAO+nRigy5snmrwPs9r0NjQyxO1RNjbyJBnFT+t1uIXvVDaDAyLFCBCkBSfFGBbFlTRBbPsgYmHy7o/OOUn3ifPXjCLjWfYlAvZVj2YbiCC7Kz9JkGdUe1sQBHvShfBO93C220C1X9T7Y="
+          secure: "KYCSPVni+HifjYSEx+mh8pZD1pGIRQP0naLjsQF/xPERdlb1mMFcLsXDvyuCQCSlziPEtf3zZLSl/ArQe44WX5HC5w0ZXW+8vilbS/8k3RfqugKnR0KZ+Oxox0VY6yYcninS52wdcx3ELDDzethDwu6bmeGMAvDqW1gA52m1dLqudQEDa6U5gx03EBImkjmgu2QFdh7ZT+sOCa/x0FjVr0JrGik6EQk7ASSq2eUK27pgOPYZON6dexMsH9LwkpV+kKvypapeVWgByVbOtAUAY4AZyW0G/cw+Ppk2Pvi8pxbPz9vVuiHnHnFcIsWVJUPVtZkg5E84hppln7lMe4XKXOKCHx8mV+gYpHmnP5y4WYIiK2igkb05EUkFtkbjpF+4MwZQh+sMHQ2NOOp5UPdy1yuzy8MeylXAdGZU3aBGTlEUs7KsfwUsxzcPpQIsQfOdwqgX88RKhBX/YWGOrdTiIupvkjwJdmpaR5JjruIy7rHY0MtGcdj+YuIQrf73lo2UgbVQAk0zaC0xwtL8xlOJLczJ1C4USfU+meuS3Zghu8HewUXfGlhexwWMdKETv+x08neMqPHoNFGg3hoWXdWWt7aCKGrEEN5HhTp16iGtSnXf+sLyZ3RYQ/7AsA7NP9Zh6XaxH5rfAstg66+D5KSqH7urIxpA6ddWUTeejmhp/dE="
         skip_cleanup: true
         on:
           tags: true
