@@ -58,3 +58,13 @@ module.exports = {
   },
 };
 ```
+
+## Releasing
+
+To release a new version of this module, use yarn to bump the version in `package.json` and create a
+git tag, then push. This will automatically get published to the NPM registry via CI.
+
+```sh
+yarn version --new-version=<major|minor|patch|premajor|preminor|prepatch>
+git push --follow-tags
+```
