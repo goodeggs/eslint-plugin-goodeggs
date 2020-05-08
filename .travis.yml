@@ -11,8 +11,8 @@ env:
   global:
     - PATH="$HOME/.yarn/bin:$PATH"
     - YARN_VERSION="1.9.4"
-    # NODE_ENV:
-    - secure: "ii2XIlDeeSCzKlTpBoZdFkVQiHdF4hbEL74ITSwkmi/nbxg9Nq7nKi9FdhhxF1EegdehTaYi7zfSipx9F+TnNZRe2AEqy9efZLhRHqtY8nojtH9ldecL0jC0SV/uJQ1xigOU3SXHcWV5wpd7DDS5URUVhsDGe4E+o+KBAKzadmNdohjG80FZ8AdgmUxbTMjJV7yhGd35g2SAaHWoFWVnMfckkBlUbqr+JmuxqbJwQ+Lmu8b3PYh+qYolW7lnUe73mbD5oKi1jgBnAuk82VVhGL7VaAVd2BgXQCbejBxDRhwl0Aty0mYYqbbq5LkioY1uDpQ4hCEh9V7Oo77qdkwBbiyP17lY6A3W0c4MDu8vqzecWYMtlzFLPJ5vT1Qin+LywHjCEGSGAfo4m0dVdMuuzKLp6Wrtfcc/2KuwEiLiucmFHjYWhnBIJpuhCIFpFLbVXMrJyuzrxvxD965qIhaxTSs3cvgha+DVZXe+s8pHp2sajG8Iwvpn3T3ISXoT6xoW7brRpA50Zlcj5W0o/coOiLtQP/u6n09BtB6tkyJpFyQB6qvdX2c+gK+Va7+vFVgiVvASHRWTNW8cvBZYEBn/iva/h5MP5CorPXWTSRlvHtXXWxpLE+p7BeecwKEzyvOQVqePfshdqGgrxPyINyg4WIVmuVjKc/mvaUhNfQPTKyE="
+    # NPM_AUTH:
+    - secure: "U2W+bHdiM84Y9zqYurTO8QVLUkXvc03bMplRZSz0CEBkgvvP8tV4iqf7gqajCov8tN7DcpddE7Vr/hNauZaAcJllejWpBWfvlSlYhFLyT8PgYX5SJGm4KREcTPY4ItjQDud/sFIpun6NFdJT/Azw+wL8f/AAH20sdFkTxdxT2SaD5hAOYI4nGve9OGqdyA+rXOHDDWFpz59eXte5SiOTOsjHxBGhW0fnPphlpwCxfvDOPrrNWJuZrKk/cR8xoHUMICBpVrtEfha7NPQlz5+P4DyJ7rWHLPKfvokxZGOouIVxZ5/35K/kLdsIM3bcnweXTqBsB7IrsEqGM+9Lay5/ITNRDyWdoHU+tbTRFA7JL9BAQgjG8MjWhAyTP/oTq9FHa9bg4z/lsPYaSUQJzFz7JEpPFOUaID7DTLSVksyy5e3sY8x8YV+jKvVMoJ3wachEm1wmfMnoYJZ7kQ206hpeZlJLwtcQ2Ja7AdjpwekHHMbw8eQXhohIgYo/aSWz+BKgwEeDGjFuQDclaPSUd1n+meyOUSVKrO8jT37rGz7a1m9gyBImU0ktJ/VdjUh3G0iSHwD/XJHHTONaMnFLkN5PJdbE/68OY/yD60o2BKS7hmT3eGkVuymbTDzcI2R3IL21xnWejZw2oVJGbpa01R2qKPhXGvwLBVK5vLMuoAvvv7k="
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version "${YARN_VERSION}"
@@ -38,11 +38,12 @@ jobs:
       script: yarn run test:unit
     - stage: "Publish to registry"
       if: tag =~ ^v
-      script: echo "Publishing to npm registry..."
+      # script: echo "Publishing to npm registry..."
       deploy:
         provider: npm
         email: open-source@goodeggs.com
         api_key: $NPM_AUTH
         skip_cleanup: true
         on:
+          tags: true
           all_branches: true
