@@ -11,8 +11,6 @@ env:
   global:
     - PATH="$HOME/.yarn/bin:$PATH"
     - YARN_VERSION="1.9.4"
-    # NODE_ENV:
-    - secure: "ii2XIlDeeSCzKlTpBoZdFkVQiHdF4hbEL74ITSwkmi/nbxg9Nq7nKi9FdhhxF1EegdehTaYi7zfSipx9F+TnNZRe2AEqy9efZLhRHqtY8nojtH9ldecL0jC0SV/uJQ1xigOU3SXHcWV5wpd7DDS5URUVhsDGe4E+o+KBAKzadmNdohjG80FZ8AdgmUxbTMjJV7yhGd35g2SAaHWoFWVnMfckkBlUbqr+JmuxqbJwQ+Lmu8b3PYh+qYolW7lnUe73mbD5oKi1jgBnAuk82VVhGL7VaAVd2BgXQCbejBxDRhwl0Aty0mYYqbbq5LkioY1uDpQ4hCEh9V7Oo77qdkwBbiyP17lY6A3W0c4MDu8vqzecWYMtlzFLPJ5vT1Qin+LywHjCEGSGAfo4m0dVdMuuzKLp6Wrtfcc/2KuwEiLiucmFHjYWhnBIJpuhCIFpFLbVXMrJyuzrxvxD965qIhaxTSs3cvgha+DVZXe+s8pHp2sajG8Iwvpn3T3ISXoT6xoW7brRpA50Zlcj5W0o/coOiLtQP/u6n09BtB6tkyJpFyQB6qvdX2c+gK+Va7+vFVgiVvASHRWTNW8cvBZYEBn/iva/h5MP5CorPXWTSRlvHtXXWxpLE+p7BeecwKEzyvOQVqePfshdqGgrxPyINyg4WIVmuVjKc/mvaUhNfQPTKyE="
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version "${YARN_VERSION}"
@@ -24,8 +22,8 @@ jobs:
     # Install dependencies and save them to the Travis cache
     - stage: "Prepare cache"
       # Don't run `script`, just install dependencies
-      before_script: true
-      script: true
+      before_script: skip
+      script: skip
     # Run tests
     - stage: "Test"
       name: "Lint"
@@ -38,11 +36,13 @@ jobs:
       script: yarn run test:unit
     - stage: "Publish to registry"
       if: tag =~ ^v
-      script: echo "Publishing to npm registry..."
+      script: skip
       deploy:
         provider: npm
         email: open-source@goodeggs.com
-        api_key: $NPM_AUTH
+        api_token:
+          secure: "VNNUgqm9whQadtrrHtzUS1sigzMmCkDNMpHCAmAocYPgaoKScdITRrL35tNxyB4pER4WAuSSrqGdsxi8G96uo7/SU3o1UkvD2dV/FRLAVUcjhp5995A3Ah5UH0D/6mEA4PZQC0e0kjOcFpLtpB8OMhyrQto1NjNdFyZg9k1/xbOdoUDRbz/YXd4mB5arxEui0wKbGcYYk4y8Abp3aHuKdJVtI8VbtdBOJZn+aXfh+wlGJzeD62AUT26nzm1VTnGPYAoF02YGL//IXp0/ddy5D+0hGaKeD1aLwY1wkf6qiKFqaMVUGbeUW140vtblxBQZfpGo77PPOk1z9zy0ZxBbI0pIaQnAeep8neAi6hfcs9SRHA/5oNSBdq+u2TmzAqdvGRWhNEs+M62ji7HCSmi7LUeM1hBx6yUlD1OEnP3HSBlT5ZKByqHlmtYXFZ+BBape6jX9GvQrAwwyq6C64hQDHhwNN3mTpeBwVRXN3fX5sv9u68NYP4eOy8djm3+jX0m4I/+cFEe2ZUmkNrOBvY2D3hs5ITIQjfkHRDt8UEPNsxn2+jBhQgtJFCiRyydqOzTTNzGCRtfmcYNb7i71k4/WhJOG9p6L1BzeoZERCmx66SGDwwgwxzEC7BKxZwNlIa9U5fT8N7mRiSFAZDBf6UWGa4ADZcGUVHVms1BbgNkiRXc="
         skip_cleanup: true
         on:
+          tags: true
           all_branches: true
