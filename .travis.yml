@@ -12,7 +12,7 @@ env:
     - PATH="$HOME/.yarn/bin:$PATH"
     - YARN_VERSION="1.9.4"
     # NODE_ENV:
-    - secure: "ii2XIlDeeSCzKlTpBoZdFkVQiHdF4hbEL74ITSwkmi/nbxg9Nq7nKi9FdhhxF1EegdehTaYi7zfSipx9F+TnNZRe2AEqy9efZLhRHqtY8nojtH9ldecL0jC0SV/uJQ1xigOU3SXHcWV5wpd7DDS5URUVhsDGe4E+o+KBAKzadmNdohjG80FZ8AdgmUxbTMjJV7yhGd35g2SAaHWoFWVnMfckkBlUbqr+JmuxqbJwQ+Lmu8b3PYh+qYolW7lnUe73mbD5oKi1jgBnAuk82VVhGL7VaAVd2BgXQCbejBxDRhwl0Aty0mYYqbbq5LkioY1uDpQ4hCEh9V7Oo77qdkwBbiyP17lY6A3W0c4MDu8vqzecWYMtlzFLPJ5vT1Qin+LywHjCEGSGAfo4m0dVdMuuzKLp6Wrtfcc/2KuwEiLiucmFHjYWhnBIJpuhCIFpFLbVXMrJyuzrxvxD965qIhaxTSs3cvgha+DVZXe+s8pHp2sajG8Iwvpn3T3ISXoT6xoW7brRpA50Zlcj5W0o/coOiLtQP/u6n09BtB6tkyJpFyQB6qvdX2c+gK+Va7+vFVgiVvASHRWTNW8cvBZYEBn/iva/h5MP5CorPXWTSRlvHtXXWxpLE+p7BeecwKEzyvOQVqePfshdqGgrxPyINyg4WIVmuVjKc/mvaUhNfQPTKyE="
+    - secure: "Wwy62drIkDa672XDza/utg26DYTnxcsHrxpswa000kMnAJo2avFqO7Mhefg4HC3lwyjfHX9FiYGF/Vfa4GqIUU91sytXqr03or30BG2BJYXQKsdAPCuO7VpN70Cqp7/rI5V7dOFg3YS5ONptx6fW3NrEqmi1uc8VPWqppkfqHzQgf+1VKj5mdlNfas8LiXVtY9i/CW9zISZHAA5pT31RsTESL4YHZWxSADzOF56PgHgt4KHnR4n1Pfnptnc+vW+Kk4LhAJU7KgeVAHOQIpEyLEWepasCryjTQxqoNHfs1lbCJGoifcUmdupEZh5kLmNDrSrkCnFBwhZkl9r/WdP5zQnr73F1iUxN81zZBXe81FHYvd3RzRkO6iUd+e1IXvifp0hRWGQWCQDjWsNNrRb2PhGAbQx0vYTfm86WfwvtS0WpW9014QBFa7IFqM7fgzQGQExxKtd3yxQ5n2/NaueVRZIREdSHx+AXbcLAEC4L4nP52pbtYfJg2D8+TH9UNiY4EFZTtjt7LizLynEe2jetfjkopEGAhqphWTa3QgU/xM4gBJWWlVA/NuIj64WCLujDR6ov8QiezYbp6EF2ffLXJHMYv5bvpgbAs3vgeORU0gfKSHcf2HEyoU4NHoZia9slN79OCZapVcy2MLd9Kr5g6PQdyL9tA6b7Fxsvys0M4aw="
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version "${YARN_VERSION}"
@@ -40,9 +40,9 @@ jobs:
       if: tag =~ ^v
       script: echo "Publishing to npm registry..."
       deploy:
-        provider: npm
-        email: open-source@goodeggs.com
-        api_key: $NPM_AUTH
+        provider: script
+        script: NPM_CONFIG_USERCONFIG=.publish.npmrc yarn publish
         skip_cleanup: true
         on:
+          tags: true
           all_branches: true
