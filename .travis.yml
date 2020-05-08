@@ -38,7 +38,7 @@ jobs:
       script: yarn run test:unit
     - stage: "Publish to registry"
       if: tag =~ ^v
-      script: echo "Publishing to npm registry..."
+      script: skip
       deploy:
         provider: npm
         email: open-source@goodeggs.com
