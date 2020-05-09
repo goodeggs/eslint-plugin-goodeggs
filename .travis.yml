@@ -36,12 +36,11 @@ jobs:
       script: yarn run test:unit
     - stage: "Publish to registry"
       if: tag =~ ^v
-      script: skip
       deploy:
         provider: npm
         email: open-source@goodeggs.com
         api_token:
-          secure: "KYCSPVni+HifjYSEx+mh8pZD1pGIRQP0naLjsQF/xPERdlb1mMFcLsXDvyuCQCSlziPEtf3zZLSl/ArQe44WX5HC5w0ZXW+8vilbS/8k3RfqugKnR0KZ+Oxox0VY6yYcninS52wdcx3ELDDzethDwu6bmeGMAvDqW1gA52m1dLqudQEDa6U5gx03EBImkjmgu2QFdh7ZT+sOCa/x0FjVr0JrGik6EQk7ASSq2eUK27pgOPYZON6dexMsH9LwkpV+kKvypapeVWgByVbOtAUAY4AZyW0G/cw+Ppk2Pvi8pxbPz9vVuiHnHnFcIsWVJUPVtZkg5E84hppln7lMe4XKXOKCHx8mV+gYpHmnP5y4WYIiK2igkb05EUkFtkbjpF+4MwZQh+sMHQ2NOOp5UPdy1yuzy8MeylXAdGZU3aBGTlEUs7KsfwUsxzcPpQIsQfOdwqgX88RKhBX/YWGOrdTiIupvkjwJdmpaR5JjruIy7rHY0MtGcdj+YuIQrf73lo2UgbVQAk0zaC0xwtL8xlOJLczJ1C4USfU+meuS3Zghu8HewUXfGlhexwWMdKETv+x08neMqPHoNFGg3hoWXdWWt7aCKGrEEN5HhTp16iGtSnXf+sLyZ3RYQ/7AsA7NP9Zh6XaxH5rfAstg66+D5KSqH7urIxpA6ddWUTeejmhp/dE="
+          secure: "VNNUgqm9whQadtrrHtzUS1sigzMmCkDNMpHCAmAocYPgaoKScdITRrL35tNxyB4pER4WAuSSrqGdsxi8G96uo7/SU3o1UkvD2dV/FRLAVUcjhp5995A3Ah5UH0D/6mEA4PZQC0e0kjOcFpLtpB8OMhyrQto1NjNdFyZg9k1/xbOdoUDRbz/YXd4mB5arxEui0wKbGcYYk4y8Abp3aHuKdJVtI8VbtdBOJZn+aXfh+wlGJzeD62AUT26nzm1VTnGPYAoF02YGL//IXp0/ddy5D+0hGaKeD1aLwY1wkf6qiKFqaMVUGbeUW140vtblxBQZfpGo77PPOk1z9zy0ZxBbI0pIaQnAeep8neAi6hfcs9SRHA/5oNSBdq+u2TmzAqdvGRWhNEs+M62ji7HCSmi7LUeM1hBx6yUlD1OEnP3HSBlT5ZKByqHlmtYXFZ+BBape6jX9GvQrAwwyq6C64hQDHhwNN3mTpeBwVRXN3fX5sv9u68NYP4eOy8djm3+jX0m4I/+cFEe2ZUmkNrOBvY2D3hs5ITIQjfkHRDt8UEPNsxn2+jBhQgtJFCiRyydqOzTTNzGCRtfmcYNb7i71k4/WhJOG9p6L1BzeoZERCmx66SGDwwgwxzEC7BKxZwNlIa9U5fT8N7mRiSFAZDBf6UWGa4ADZcGUVHVms1BbgNkiRXc="
         skip_cleanup: true
         on:
           tags: true
