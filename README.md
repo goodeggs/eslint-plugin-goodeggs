@@ -48,7 +48,7 @@ For example, the following configuration files will run lint and fix any fixable
 ```js
 // lint-staged.config.js
 module.exports = {
-  '*.{js,jsx,ts,tsx}': ['yarn run lint:fix:base', 'git add'],
+  '*.{js,jsx,ts,tsx}': 'yarn run lint:fix:base',
 };
 
 // .huskyrc.js
