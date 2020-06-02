@@ -30,7 +30,7 @@ module.exports = require('@goodeggs/prettier-config');
 "scripts": {
   "lint": "yarn run lint:base .",
   "lint:base": "eslint --ext .js,.jsx,.ts,.tsx --cache --report-unused-disable-directives",
-  "lint:fix": "yarn run lint:fix:base ."
+  "lint:fix": "yarn run lint:fix:base .",
   "lint:fix:base": "yarn run lint:base --fix"
 }
 ```
