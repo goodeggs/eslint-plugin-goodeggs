@@ -2,6 +2,10 @@
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
+# v10.0.0
+
+- Upgrade to [Prettier 2.0](https://prettier.io/blog/2020/03/21/2.0.0.html). To upgrade, simultaneously upgrade eslint-plugin-goodeggs to v10 and prettier to v2, then run `eslint --fix` (or equivalent command) to reformat given the updated rules.
+
 # v9.0.1
 
 - Disable [`react/no-adjacent-inline-elements` (warn)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/no-adjacent-inline-elements.md), which sometimes errors out. I'll look into re-enabling this later.
