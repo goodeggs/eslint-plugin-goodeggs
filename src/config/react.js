@@ -25,7 +25,7 @@ export default {
     'react/jsx-boolean-value': 'error',
     'react/jsx-filename-extension': ['error', {extensions: ['.jsx', '.tsx']}],
     'react/jsx-fragments': 'error',
-    'react/jsx-no-bind': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/jsx-no-bind': 'off', // this has been changed to off as a result of this ADR: https://github.com/goodeggs/marketplace-mobile-app/pull/217
     'react/jsx-no-script-url': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
