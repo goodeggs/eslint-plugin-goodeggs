@@ -41,6 +41,7 @@ export default {
     'react/prefer-stateless-function': 'warn', // TODO(ndhoule): Consider making this an error
     'react/prop-types': 'off', // We leverage typing via Flow and TypeScript, which are redundant with prop types.
     'react/self-closing-comp': 'error',
+    'react/state-in-constructor': 'error',
     'react/void-dom-elements-no-children': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
