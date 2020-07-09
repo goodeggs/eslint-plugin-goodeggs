@@ -19,8 +19,8 @@ export default {
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
     'react/no-access-state-in-setstate': 'error',
-    'react/no-array-index-key': 'warn', // TODO(ndhoule): Consider making this an error
-    'react/no-children-prop': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/no-array-index-key': 'warn',
+    'react/no-children-prop': 'error',
     'react/no-danger': 'warn',
     'react/no-did-mount-set-state': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-did-update-set-state': 'warn', // TODO(ndhoule): Consider making this an error
