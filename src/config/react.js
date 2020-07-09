@@ -11,7 +11,6 @@ export default {
   },
   // TODO(ndhoule): Consider enabling these rules:
   //
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md (TypeScript support?)
@@ -25,6 +24,7 @@ export default {
     'react/jsx-boolean-value': 'error',
     'react/jsx-filename-extension': ['error', {extensions: ['.jsx', '.tsx']}],
     'react/jsx-fragments': 'error',
+    'react/jsx-handler-names': 'error',
     'react/jsx-no-bind': 'off', // this has been changed to off as a result of this ADR: https://github.com/goodeggs/marketplace-mobile-app/pull/217
     'react/jsx-no-script-url': 'error',
     'react/jsx-no-useless-fragment': 'error',
