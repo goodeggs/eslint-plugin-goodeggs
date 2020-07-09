@@ -22,7 +22,7 @@ export default {
     'react/no-array-index-key': 'warn',
     'react/no-children-prop': 'error',
     'react/no-danger': 'warn',
-    'react/no-did-mount-set-state': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/no-did-mount-set-state': 'error',
     'react/no-did-update-set-state': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
