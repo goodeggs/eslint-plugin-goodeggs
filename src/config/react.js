@@ -18,7 +18,7 @@ export default {
     'react/jsx-no-script-url': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-pascal-case': 'error',
-    'react/no-access-state-in-setstate': 'error', // TODO(ndhoule): Consider making this an error
+    'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-children-prop': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-danger': 'warn',
@@ -31,7 +31,7 @@ export default {
     'react/no-typos': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-unused-state': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-will-update-set-state': 'error',
-    'react/prefer-es6-class': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/prefer-es6-class': 'error',
     'react/prefer-stateless-function': 'warn', // TODO(ndhoule): Consider making this an error
     'react/prop-types': 'off', // We leverage typing via Flow and TypeScript, which are redundant with prop types.
     'react/self-closing-comp': 'error',
