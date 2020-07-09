@@ -32,7 +32,7 @@ export default {
     'react/no-unused-state': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-will-update-set-state': 'error',
     'react/prefer-es6-class': 'error',
-    'react/prefer-stateless-function': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/prefer-stateless-function': 'error',
     'react/prop-types': 'off', // We leverage typing via Flow and TypeScript, which are redundant with prop types.
     'react/self-closing-comp': 'error',
     'react/state-in-constructor': 'error',
