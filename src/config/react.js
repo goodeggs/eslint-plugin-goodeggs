@@ -7,12 +7,6 @@ export default {
       version: 'detect',
     },
   },
-  // TODO(ndhoule): Consider enabling these rules:
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md (TypeScript support?)
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md (TypeScript support?)
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
   rules: {
     'react/boolean-prop-naming': 'warn',
     'react/button-has-type': 'error',
