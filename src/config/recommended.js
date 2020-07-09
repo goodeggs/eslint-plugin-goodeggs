@@ -50,6 +50,7 @@ export default {
     'no-eq-null': 'off',
     'no-fallthrough': 'error',
     'no-implicit-coercion': 'error',
+    'no-implicit-globals': 'error',
     'no-loop-func': 'error',
     'no-mixed-requires': ['error', {grouping: true}],
     'no-native-reassign': 'error',
@@ -65,15 +66,15 @@ export default {
     // (e.g. Express middleware).
     'no-unused-vars': ['error', {argsIgnorePattern: '^_', caughtErrors: 'all'}],
     'no-useless-concat': 'error',
-    // This rule is part of the `eslint:recommended` ruleset, but will soon be removed because it
-    // reports false positives.
-    // https://github.com/eslint/eslint/issues/11899#issuecomment-541714523
-    'require-atomic-updates': 'off',
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
     // TODO(ndhoule): eslint-plugin-problems defines this as a problem, but lower it to a warn for
     // now to give consumers time to update their code.
     'prefer-object-spread': 'warn',
+    // This rule is part of the `eslint:recommended` ruleset, but will soon be removed because it
+    // reports false positives.
+    // https://github.com/eslint/eslint/issues/11899#issuecomment-541714523
+    'require-atomic-updates': 'off',
     'spaced-comment': ['error', 'always'],
 
     /*
