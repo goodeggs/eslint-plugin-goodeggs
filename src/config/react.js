@@ -29,7 +29,7 @@ export default {
     'react/no-unsafe': ['warn', {checkAliases: true}],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
-    'react/no-unused-state': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/no-unused-state': 'warn',
     'react/no-will-update-set-state': 'error',
     'react/prefer-es6-class': 'error',
     'react/prefer-stateless-function': 'error',
