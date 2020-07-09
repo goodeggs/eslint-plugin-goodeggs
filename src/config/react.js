@@ -23,7 +23,7 @@ export default {
     'react/no-children-prop': 'error',
     'react/no-danger': 'warn',
     'react/no-did-mount-set-state': 'error',
-    'react/no-did-update-set-state': 'warn', // TODO(ndhoule): Consider making this an error
+    'react/no-did-update-set-state': 'error',
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
     'react/no-unsafe': ['warn', {checkAliases: true}],
