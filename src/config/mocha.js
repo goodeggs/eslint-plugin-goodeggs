@@ -24,5 +24,6 @@ export default {
     // existing repositories.
     'mocha/no-skipped-tests': 'off',
     'mocha/no-top-level-hooks': 'error',
+    'mocha/no-exclusive-tests': 'error',
   },
 };
