@@ -5,14 +5,9 @@ export default {
   settings: {
     react: {
       version: 'detect',
-      // TODO(ndhoule): Consider passing `flowVersion` here when flow is installed
-      // (https://github.com/yannickcr/eslint-plugin-react#configuration)
     },
   },
   // TODO(ndhoule): Consider enabling these rules:
-  //
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
-  // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md (TypeScript support?)
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md (TypeScript support?)
   // - https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md
@@ -37,6 +32,7 @@ export default {
     'react/no-did-update-set-state': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
+    'react/no-unsafe': ['warn', {checkAliases: true}],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'warn', // TODO(ndhoule): Consider making this an error
     'react/no-unused-state': 'warn', // TODO(ndhoule): Consider making this an error
