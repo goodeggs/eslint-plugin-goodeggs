@@ -1,3 +1,5 @@
+import '@rushstack/eslint-patch/modern-module-resolution';
+
 // https://github.com/yannickcr/eslint-plugin-react
 export default {
   plugins: ['react', 'react-hooks'],
