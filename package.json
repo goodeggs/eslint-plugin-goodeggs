@@ -30,7 +30,8 @@
     "test:unit": "jest $JEST_FLAGS"
   },
   "dependencies": {
-    "@goodeggs/prettier-config": "^1.0.0"
+    "@goodeggs/prettier-config": "^1.0.0",
+    "@rushstack/eslint-patch": "^1.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
