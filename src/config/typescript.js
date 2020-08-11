@@ -29,7 +29,7 @@ export default {
         'no-use-before-define': 'off',
         'no-useless-constructor': 'off',
 
-        '@typescript-eslint/ban-ts-comment': 'error',
+        '@typescript-eslint/ban-ts-comment': ['error', {'ts-ignore': 'allow-with-description'}],
         // Enabled by @typescript-eslint/recommended, but @typescript-eslint/ban-ts-comment is a
         // more restrictive version of this rule.
         '@typescript-eslint/ban-ts-ignore': 'off',
