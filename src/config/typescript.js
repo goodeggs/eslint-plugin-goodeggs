@@ -11,7 +11,6 @@ export default {
         '@typescript-eslint',
       ],
       extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:import/typescript',
         'prettier/@typescript-eslint',
@@ -32,10 +31,33 @@ export default {
         '@typescript-eslint/ban-ts-comment': ['error', {'ts-ignore': 'allow-with-description'}],
         // Enabled by @typescript-eslint/recommended, but @typescript-eslint/ban-ts-comment is a
         // more restrictive version of this rule.
-        '@typescript-eslint/ban-ts-ignore': 'off',
         '@typescript-eslint/default-param-last': 'warn',
         // Enabled by @typescript-eslint/recommended, conflicts with prettier
         '@typescript-eslint/indent': 'off',
+
+        '@typescript-eslint/naming-convention': [
+          'error',
+          // Don't prefix interface types with "I".
+          {
+            selector: 'interface',
+            format: ['PascalCase'],
+            custom: {
+              regex: '^I[A-Z]',
+              match: false,
+            },
+          },
+          // Only capitalize the first letter of each section of a class or interface name.
+          // e.g. Bad: "HTTPAPIContractTestHelper", Good: "HttpApiContractTestHelper".
+          // This is enforced by disallowing any name with 2 capital letters in a row.
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+            custom: {
+              regex: '{A-Z}(2)',
+              match: false,
+            },
+          },
+        ],
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss whether or not this is
         // worthwhile; I've never had it cause any pain, but perhaps others have?
         '@typescript-eslint/no-empty-function': 'off',
