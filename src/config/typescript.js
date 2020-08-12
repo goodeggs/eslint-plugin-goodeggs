@@ -82,7 +82,10 @@ export default {
         '@typescript-eslint/restrict-plus-operands': ['error', {checkCompoundAssignments: true}],
         '@typescript-eslint/restrict-template-expressions': 'error',
         '@typescript-eslint/return-await': 'error',
-        '@typescript-eslint/strict-boolean-expressions': ['error', {allowString: false, allowNumber: false, allowNullableObject: false}],
+        '@typescript-eslint/strict-boolean-expressions': [
+          'error',
+          {allowString: false, allowNumber: false, allowNullableObject: false},
+        ],
       },
     },
   ],
