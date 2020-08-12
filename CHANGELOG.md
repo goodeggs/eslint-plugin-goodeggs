@@ -1,5 +1,19 @@
 # vNEXT
 
+- Upgrade @typescript-eslint to [v3.9](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0).
+
+## New rules:
+
+- [`@typescript-eslint/naming-convention (error)`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
+  - Enforces PascalCase for Classes and Interfaces, camelCase for everything else.
+  - Disallows capitalization in variable or class names other than the first letter of each segment of the name (Bad: `HTTPAPIHelper`, Good: `HttpApiHelper`).
+- [`@typescript-eslint/ban-ts-comment`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md#allow-with-description).
+  - `@ts-ignore is now allowed as long as there is a comment explaining why it was used.
+- [`@typescript-eslint/strict-boolean-expressions` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md).
+  - Forbids usage of non-boolean types in expressions where a boolean is expected, including strings, numbers, and nullable objects.
+- [`@typescript-eslint/ban-types`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md).
+  - Rule settings have not changed, but the updated version of the rule is more restrictive - `{}` and `Function` types are now disallowed.
+
 <!-- Put changelog messages that haven't yet been released above this! -->
 
 # v10.0.0
@@ -66,6 +80,7 @@ Uninstall `eslint`, `babel-eslint`, `prettier`, `eslint-plugin-goodeggs`, and an
 Next, install `@goodeggs/toolkit` and replace any `eslint` scripts with `getk run lint-es <glob>` and `getk run fix-es <glob>`.
 
 Finally, change the contents of `.prettierrc.js` to:
+
 ```js
 module.exports = require('@goodeggs/toolkit/config/prettier');
 ```
@@ -82,9 +97,7 @@ Here's a baseline configuration that makes no assumptions about your environment
 
 ```json
 {
-  "extends": [
-    "plugin:goodeggs/recommended"
-  ]
+  "extends": ["plugin:goodeggs/recommended"]
 }
 ```
 
