@@ -1,11 +1,12 @@
 # vNEXT
 
 - Upgrade @typescript-eslint to [v3.9](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0).
+- Make TypeScript >=3.7.0 <3.10.0 an optional peer dependency. (@typescript-eslint v3.9 requires minimum TypeScript version 3.7).
 
 ## New rules:
 
 - [`@typescript-eslint/naming-convention (error)`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
-  - Enforces PascalCase for Classes and Interfaces, camelCase for everything else.
+  - Enforces PascalCase for class, interface, typeAlias, enum, and typeParameter, camelCase for everything else.
   - Disallows capitalization in variable or class names other than the first letter of each segment of the name (Bad: `HTTPAPIHelper`, Good: `HttpApiHelper`).
 - [`@typescript-eslint/ban-ts-comment`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md#allow-with-description).
   - `@ts-ignore is now allowed as long as there is a comment explaining why it was used.
