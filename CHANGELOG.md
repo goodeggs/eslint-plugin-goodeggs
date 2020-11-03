@@ -7,7 +7,6 @@
 
 - [`@typescript-eslint/naming-convention (error)`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
   - Enforces PascalCase for class, interface, typeAlias, enum, and typeParameter, camelCase for everything else.
-  - Disallows capitalization in variable or class names other than the first letter of each segment of the name (Bad: `HTTPAPIHelper`, Good: `HttpApiHelper`).
 - [`@typescript-eslint/ban-ts-comment`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md#allow-with-description).
   - `@ts-ignore is now allowed as long as there is a comment explaining why it was used.
 - [`@typescript-eslint/strict-boolean-expressions` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md).
