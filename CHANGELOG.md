@@ -1,7 +1,7 @@
 # vNEXT
 
-- Upgrade @typescript-eslint to [v3.9](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v3.0.0).
-- Make TypeScript >=3.7.0 <3.10.0 an optional peer dependency. (@typescript-eslint v3.9 requires minimum TypeScript version 3.7).
+- Upgrade @typescript-eslint to [v4.6.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v4.0.0).
+- Make TypeScript >=4.0.5 an optional peer dependency.
 
 ## New rules:
 
