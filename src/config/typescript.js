@@ -11,7 +11,6 @@ export default {
         '@typescript-eslint',
       ],
       extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:import/typescript',
         'prettier/@typescript-eslint',
@@ -28,11 +27,7 @@ export default {
         'no-unused-vars': 'off',
         'no-use-before-define': 'off',
         'no-useless-constructor': 'off',
-
-        '@typescript-eslint/ban-ts-comment': 'error',
-        // Enabled by @typescript-eslint/recommended, but @typescript-eslint/ban-ts-comment is a
-        // more restrictive version of this rule.
-        '@typescript-eslint/ban-ts-ignore': 'off',
+        '@typescript-eslint/ban-ts-comment': ['error', {'ts-ignore': 'allow-with-description'}],
         '@typescript-eslint/default-param-last': 'warn',
         // Enabled by @typescript-eslint/recommended, conflicts with prettier
         '@typescript-eslint/indent': 'off',
@@ -60,6 +55,10 @@ export default {
         '@typescript-eslint/restrict-plus-operands': ['error', {checkCompoundAssignments: true}],
         '@typescript-eslint/restrict-template-expressions': 'error',
         '@typescript-eslint/return-await': 'error',
+        '@typescript-eslint/strict-boolean-expressions': [
+          'error',
+          {allowString: false, allowNumber: false, allowNullableObject: false},
+        ],
       },
     },
   ],
