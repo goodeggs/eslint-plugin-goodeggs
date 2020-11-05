@@ -1,5 +1,16 @@
 # vNEXT
 
+
+## New rules:
+
+
+## Updated rules:
+
+
+<!-- Put changelog messages that haven't yet been released above this! -->
+
+# v11.0.0
+
 - Upgrade @typescript-eslint to [v4.6.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v4.0.0).
 - Make TypeScript >=4.0.5 an optional peer dependency.
 - Upgrade to ESLint 7: https://eslint.org/docs/user-guide/migrating-to-7.0.0
@@ -23,8 +34,6 @@
 
 As part of the ESLint 7 upgrade, [a few rules have been updated to cover more
 cases](https://eslint.org/docs/user-guide/migrating-to-7.0.0).
-
-<!-- Put changelog messages that haven't yet been released above this! -->
 
 # v10.0.0
 
