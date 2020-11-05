@@ -2,6 +2,8 @@
 
 - Upgrade @typescript-eslint to [v4.6.1](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v4.0.0).
 - Make TypeScript >=4.0.5 an optional peer dependency.
+- Upgrade to ESLint 7: https://eslint.org/docs/user-guide/migrating-to-7.0.0
+- Drop support for node 8
 
 ## New rules:
 
@@ -13,6 +15,14 @@
   - Forbids usage of non-boolean types in expressions where a boolean is expected, including strings, numbers, and nullable objects.
 - [`@typescript-eslint/ban-types`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md).
   - Rule settings have not changed, but the updated version of the rule is more restrictive - `{}` and `Function` types are now disallowed.
+- [`no-dupe-else-if` (error)](https://eslint.org/docs/rules/no-dupe-else-if)
+- [`no-import-assign` (error)](https://eslint.org/docs/rules/no-import-assign)
+- [`no-setter-return` (error)](https://eslint.org/docs/rules/no-setter-return)
+
+## Updated rules:
+
+As part of the ESLint 7 upgrade, [a few rules have been updated to cover more
+cases](https://eslint.org/docs/user-guide/migrating-to-7.0.0).
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
