@@ -1,3 +1,5 @@
+import '@rushstack/eslint-patch/modern-module-resolution';
+
 import recommended from './recommended';
 
 export default {

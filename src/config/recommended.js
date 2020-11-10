@@ -1,3 +1,5 @@
+import '@rushstack/eslint-patch/modern-module-resolution';
+
 import * as globs from '../globs';
 
 export default {

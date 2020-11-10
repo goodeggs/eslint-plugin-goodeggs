@@ -1,3 +1,5 @@
+import '@rushstack/eslint-patch/modern-module-resolution';
+
 // https://github.com/lo1tuma/eslint-plugin-mocha
 export default {
   plugins: ['mocha'],
