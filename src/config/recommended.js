@@ -64,7 +64,10 @@ export default {
     'no-unused-expressions': 'error',
     // Allow unused arguments and variables prefixed with _. Useful for arity-sensitive functions
     // (e.g. Express middleware).
-    'no-unused-vars': ['error', {argsIgnorePattern: '^_', caughtErrors: 'all'}],
+    'no-unused-vars': [
+      'error',
+      {varsIgnorePattern: '^_', argsIgnorePattern: '^_', caughtErrors: 'all'},
+    ],
     'no-useless-concat': 'error',
     'no-void': 'error',
     'operator-assignment': ['error', 'always'],
