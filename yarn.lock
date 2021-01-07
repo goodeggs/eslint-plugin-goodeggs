@@ -2355,7 +2355,7 @@ eslint-plugin-flowtype@^5.2.0:
     lodash "^4.17.15"
     string-natural-compare "^3.0.1"
 
-"eslint-plugin-goodeggs@file:./.":
+"eslint-plugin-goodeggs@file:.":
   version "11.0.1"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
@@ -2379,11 +2379,10 @@ eslint-plugin-import@^2.22.1:
     tsconfig-paths "^3.9.0"
 
 eslint-plugin-jest@^23.6.0:
-  version "23.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.6.0.tgz#508b32f80d44058c8c01257c0ee718cfbd521e9d"
+  version "23.20.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.20.0.tgz#e1d69c75f639e99d836642453c4e75ed22da4099"
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
-    micromatch "^4.0.2"
 
 eslint-plugin-lodash@^7.1.0:
   version "7.1.0"
