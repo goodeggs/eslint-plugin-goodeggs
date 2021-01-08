@@ -66,7 +66,9 @@ export default {
     // (e.g. Express middleware).
     'no-unused-vars': [
       'error',
-      {varsIgnorePattern: '^_', argsIgnorePattern: '^_', caughtErrors: 'all'},
+      // Ignore unused variable names starting with `_` followed by anything (but not just `_`,
+      // since that's usually lodash).
+      {varsIgnorePattern: '^_.+', argsIgnorePattern: '^_', caughtErrors: 'all'},
     ],
     'no-useless-concat': 'error',
     'no-void': 'error',
