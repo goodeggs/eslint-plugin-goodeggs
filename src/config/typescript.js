@@ -31,6 +31,54 @@ export default {
         '@typescript-eslint/default-param-last': 'warn',
         // Enabled by @typescript-eslint/recommended, conflicts with prettier
         '@typescript-eslint/indent': 'off',
+        '@typescript-eslint/naming-convention': [
+          'error',
+
+          {
+            selector: 'default',
+            format: ['camelCase'],
+            // We don't really want to use `__`, but mongoose has `__v`, GraphQL has `__typename`, etc.
+            // So it's more trouble than it's worth to disallow it.
+            leadingUnderscore: 'allowSingleOrDouble',
+            trailingUnderscore: 'forbid',
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE'],
+            // See comment above.
+            leadingUnderscore: 'allowSingleOrDouble',
+            trailingUnderscore: 'forbid',
+          },
+          {
+            selector: ['typeLike', 'enumMember'],
+            format: ['PascalCase'],
+          },
+          // Common exceptions to class/object property camelcase rule.
+          {
+            selector: ['memberLike'],
+            filter: {
+              regex: '^(SU|MO|TU|WE|TH|FR|SA)$',
+              match: true,
+            },
+            format: null,
+          },
+          // Ignore variables destructured from object properties. Either we own the
+          // declarations/assignments of the object, in which case the naming-convention rule will be
+          // applied elsewhere, or we don't, in which case enforcing a rename is a bit heavy-handed.
+          {
+            selector: 'variable',
+            modifiers: ['destructured'],
+            format: null,
+          },
+          // Ignore all naming conventions for literal object properties that _require_ quotes, e.g.
+          // `product._id` in a mongoose query.
+          {
+            selector: 'objectLiteralProperty',
+            modifiers: ['requiresQuotes'],
+            format: null,
+          },
+        ],
+
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss whether or not this is
         // worthwhile; I've never had it cause any pain, but perhaps others have?
         '@typescript-eslint/no-empty-function': 'off',
