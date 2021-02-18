@@ -96,6 +96,7 @@ export default {
         '@typescript-eslint/no-extra-semi': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
+        '@typescript-eslint/no-invalid-void-type': 'error',
         '@typescript-eslint/no-shadow': 'error',
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss enabling it permanently.
         '@typescript-eslint/no-this-alias': 'off',
@@ -115,6 +116,7 @@ export default {
           'error',
           {allowString: false, allowNumber: false, allowNullableObject: false},
         ],
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
       },
     },
   ],
