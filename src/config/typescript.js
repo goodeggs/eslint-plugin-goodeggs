@@ -16,24 +16,30 @@ export default {
         'prettier/@typescript-eslint',
       ],
       rules: {
+        // These are all superseded by better, type-aware @typescript-eslint rules. See
+        // https://github.com/typescript-eslint/typescript-eslint/blob/885780d4a2b07e418256b7323d76b18453c14a50/packages/eslint-plugin/README.md#extension-rules.
         camelcase: 'off',
+        'no-array-constructor': 'off',
         'no-empty-function': 'off',
-        // Enabled by eslint:recommended, conflicts with @typescript-eslint/no-extra-semi
         'no-extra-semi': 'off',
+        'no-implied-eval': 'off',
+        'no-shadow': 'off',
+        'no-throw-literal': 'off',
+        'no-unused-vars': 'off',
+        'no-use-before-define': 'off',
+        'no-useless-constructor': 'off',
+
         // This rule is enabled by `eslint-plugin-problems`; we replace it here with
         // `@typescript-eslint/return-await`, which does the same thing as this rule but with better
         // type information.
         'no-return-await': 'off',
-        'no-unused-vars': 'off',
-        'no-use-before-define': 'off',
-        'no-useless-constructor': 'off',
+
         '@typescript-eslint/ban-ts-comment': ['error', {'ts-ignore': 'allow-with-description'}],
         '@typescript-eslint/default-param-last': 'warn',
         // Enabled by @typescript-eslint/recommended, conflicts with prettier
         '@typescript-eslint/indent': 'off',
         '@typescript-eslint/naming-convention': [
           'error',
-
           {
             selector: 'default',
             format: ['camelCase'],
@@ -79,6 +85,7 @@ export default {
           },
         ],
 
+        '@typescript-eslint/no-array-constructor': 'error',
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss whether or not this is
         // worthwhile; I've never had it cause any pain, but perhaps others have?
         '@typescript-eslint/no-empty-function': 'off',
@@ -86,9 +93,10 @@ export default {
         // but will eventually, accept any props.
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
-        '@typescript-eslint/no-extra-semi': ['error'],
+        '@typescript-eslint/no-extra-semi': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-implied-eval': 'error',
+        '@typescript-eslint/no-shadow': 'error',
         // TODO(ndhoule): Enabled by @typescript-eslint/recommended. Discuss enabling it permanently.
         '@typescript-eslint/no-this-alias': 'off',
         '@typescript-eslint/no-throw-literal': 'error',
