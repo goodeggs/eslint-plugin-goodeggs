@@ -2443,8 +2443,8 @@ eslint-ast-utils@^1.1.0:
     lodash.zip "^4.2.0"
 
 eslint-config-prettier@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.1.0.tgz#5402eb559aa94b894effd6bddfa0b1ca051c858f"
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
 
 eslint-config-problems@^5.0.0:
   version "5.0.0"
@@ -2484,8 +2484,8 @@ eslint-plugin-flowtype@^5.3.0:
     lodash "^4.17.15"
     string-natural-compare "^3.0.1"
 
-"eslint-plugin-goodeggs@file:./.":
-  version "11.0.2"
+"eslint-plugin-goodeggs@file:.":
+  version "12.0.0"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
 
