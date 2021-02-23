@@ -1,13 +1,52 @@
 # vNEXT
 
 
-## New rules:
+## New rules
 
 
-## Updated rules:
+## Updated rules
 
 
 <!-- Put changelog messages that haven't yet been released above this! -->
+
+# v12.0.0
+
+See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/597 for a detailed changelog.
+
+## New rules
+
+- [`@typescript-eslint/no-invalid-void-type`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md)
+- [`@typescript-eslint/switch-exhaustiveness-check`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md)
+
+## Updated rules
+
+- Restored naming convention rules for TypeScript files, unintentionally removed (regressed) in v11.
+  - This closely resembles the configuration in v10.
+  - There are a few small conveniences added that relax some previous rules.
+  - There are also a few small additions that make this config a bit stricter than previously.
+    - The most notable of these is requiring enum members to be in `PascalCase`.
+- Fixed various TypeScript rules by actually disabling the superseded base eslint rules. See
+  https://github.com/typescript-eslint/typescript-eslint/blob/885780d4a2b07e418256b7323d76b18453c14a50/packages/eslint-plugin/README.md#extension-rules.
+  - When upgrading to this version, you should clean up redundant overrides that disable the following rules:
+    - `camelcase`
+    - `no-array-constructor`
+    - `no-empty-function`
+    - `no-extra-semi`
+    - `no-implied-eval`
+    - `no-shadow`
+    - `no-throw-literal`
+    - `no-unused-vars`
+    - `no-use-before-define`
+    - `no-useless-constructor`
+
+## Known issues
+
+Unfortunately, mongoose's `Model` (both in `@types/mongoose` and in the new built-in type
+declarations) is not typed as a `class` even though it is one. This means that TypeScript doesn't
+think it's a class, so `@typescript/eslint` doesn't think it's a class, so it doesn't allow
+PascalCase. It's unclear what next steps here are. Perhaps open a @types/mongoose issue or PR?  In
+the meantime, this must be `eslint-disable`d or otherwise worked around (e.g. export the model
+without naming it).
 
 # v11.0.0
 
@@ -16,7 +55,7 @@
 - Upgrade to ESLint 7: https://eslint.org/docs/user-guide/migrating-to-7.0.0
 - Drop support for node 8
 
-## New rules:
+## New rules
 
 - [`@typescript-eslint/naming-convention (error)`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
   - Enforces PascalCase for class, interface, typeAlias, enum, and typeParameter, camelCase for everything else.
@@ -30,7 +69,7 @@
 - [`no-import-assign` (error)](https://eslint.org/docs/rules/no-import-assign)
 - [`no-setter-return` (error)](https://eslint.org/docs/rules/no-setter-return)
 
-## Updated rules:
+## Updated rules
 
 As part of the ESLint 7 upgrade, [a few rules have been updated to cover more
 cases](https://eslint.org/docs/user-guide/migrating-to-7.0.0).
@@ -45,11 +84,11 @@ cases](https://eslint.org/docs/user-guide/migrating-to-7.0.0).
 
 # v9.0.0
 
-## Removed rules:
+## Removed rules
 
 - [`@typescript-eslint/ban-ts-ignore` (error)](https://github.com/typescript-eslint/typescript-eslint/blob/4670aabef31d9017ad302f206b9c2f18d53c8ee4/packages/eslint-plugin/docs/rules/ban-ts-ignore.md): Replaced by the newer, stricter `ban-ts-comment` rule. If your code overrides this rule, something like `ag -Q '@typescript-eslint/ban-ts-ignore' -l --print0 | xargs -0 sed -i '' 's|@typescript-eslint/ban-ts-ignore|@typescript-eslint/ban-ts-comment|g'` should fix most instances of it.
 
-## New rules:
+## New rules
 
 - [`react/jsx-no-script-url` (error)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/jsx-no-script-url.md)
 - [`react/no-adjacent-inline-elements` (warn)](https://github.com/yannickcr/eslint-plugin-react/blob/0a717a52730c2a360ba8448e89cd5ac519ad0ee3/docs/rules/no-adjacent-inline-elements.md)
