@@ -131,6 +131,7 @@ export default {
         '@typescript-eslint/prefer-includes': 'error',
         '@typescript-eslint/prefer-for-of': 'error',
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+        '@typescript-eslint/no-confusing-void-expression': 'error',
       },
     },
   ],
