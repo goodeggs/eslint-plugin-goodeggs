@@ -119,6 +119,7 @@ export default {
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
         '@typescript-eslint/array-type': ['error', {default: 'array-simple'}],
         '@typescript-eslint/prefer-includes': 'error',
+        '@typescript-eslint/prefer-for-of': 'error',
       },
     },
   ],
