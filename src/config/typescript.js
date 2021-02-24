@@ -133,6 +133,7 @@ export default {
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-confusing-void-expression': 'error',
         '@typescript-eslint/prefer-optional-chain': 'error',
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       },
     },
   ],
