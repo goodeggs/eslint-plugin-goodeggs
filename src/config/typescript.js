@@ -127,6 +127,7 @@ export default {
           {allowString: false, allowNumber: false, allowNullableObject: false},
         ],
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
+        '@typescript-eslint/array-type': ['error', {default: 'array-simple'}],
       },
     },
   ],
