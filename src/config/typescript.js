@@ -59,6 +59,16 @@ export default {
             selector: ['typeLike', 'enumMember'],
             format: ['PascalCase'],
           },
+          // We follow the React community convention of using PascalCase for all React components,
+          // even "functional components", which are actually functions, even though this goes
+          // against the more general "use camelCase for functions" rule. Unfortunately, there is no
+          // way to configure this exception specifically for React functional components, so just
+          // allow both camelCase and PascalCase for all functions :(. See
+          // https://github.com/typescript-eslint/typescript-eslint/issues/2607.
+          {
+            selector: 'function',
+            format: ['PascalCase', 'camelCase'],
+          },
           // Common exceptions to class/object property camelcase rule.
           {
             selector: ['memberLike'],
