@@ -1,0 +1,146 @@
+version: 2
+registries:
+  npm-registry-registry-npmjs-org:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: "${{secrets.NPM_REGISTRY_REGISTRY_NPMJS_ORG_TOKEN}}"
+  npm-registry-npm-goodeggs-com:
+    type: npm-registry
+    url: https://npm.goodeggs.com
+    token: "${{secrets.NPM_REGISTRY_NPM_GOODEGGS_COM_TOKEN}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+    timezone: America/Los_Angeles
+  open-pull-requests-limit: 27
+  ignore:
+  - dependency-name: eslint-plugin-flowtype
+    versions:
+    - 5.2.1
+    - 5.2.2
+    - 5.3.0
+    - 5.3.1
+    - 5.4.0
+    - 5.5.0
+    - 5.6.0
+    - 5.7.0
+    - 5.7.1
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.1.10
+    - 24.1.4
+    - 24.1.5
+    - 24.1.6
+    - 24.1.7
+    - 24.1.8
+    - 24.1.9
+    - 24.2.0
+    - 24.2.1
+    - 24.3.0
+    - 24.3.1
+    - 24.3.2
+    - 24.3.3
+    - 24.3.4
+    - 24.3.5
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.14.1
+    - 4.14.2
+    - 4.15.0
+    - 4.15.1
+    - 4.15.2
+    - 4.16.0
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.14.1
+    - 4.14.2
+    - 4.15.0
+    - 4.15.1
+    - 4.15.2
+    - 4.16.0
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+  - dependency-name: eslint-plugin-unicorn
+    versions:
+    - 28.0.1
+    - 29.0.0
+  - dependency-name: "@babel/cli"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.14
+  - dependency-name: eslint-plugin-react
+    versions:
+    - 7.23.0
+    - 7.23.1
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.12
+    - 7.13.5
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
+    - 4.1.5
+    - 4.2.2
+    - 4.2.3
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 7.2.0
+  - dependency-name: node-notifier
+    versions:
+    - 8.0.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  registries:
+  - npm-registry-registry-npmjs-org
+  - npm-registry-npm-goodeggs-com
