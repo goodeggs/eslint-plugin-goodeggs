@@ -130,6 +130,18 @@ export default {
         groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
       },
     ],
+    'import/no-anonymous-default-export': [
+      'error',
+      {
+        allowArray: true,
+        allowArrowFunction: false,
+        allowAnonymousClass: false,
+        allowAnonymousFunction: false,
+        allowCallExpression: true,
+        allowLiteral: true,
+        allowObject: true,
+      },
+    ],
 
     /*
      * eslint-plugin-lodash
