@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-goodeggs",
-  "version": "12.0.1",
+  "version": "12.0.2",
   "author": "Good Eggs Inc.",
   "description": "An eslint plugin containing linter rules specific to Good Eggs.",
   "license": "MIT",
@@ -9,6 +9,14 @@
     "lib/**/*",
     "prettier-config.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodeggs/eslint-plugin-goodeggs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/goodeggs/eslint-plugin-goodeggs/issues"
+  },
+  "homepage": "https://github.com/goodeggs/eslint-plugin-goodeggs#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
