@@ -2,7 +2,7 @@ dist: xenial
 
 language: node_js
 node_js:
-  - 12.14.1
+  - 12.22.5
 
 cache:
   yarn: true
