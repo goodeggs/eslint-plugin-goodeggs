@@ -9,6 +9,12 @@
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
+# v12.0.4
+
+## New rules
+
+- [`no-constructor-return`](https://eslint.org/docs/rules/no-constructor-return)
+
 # v12.0.0
 
 See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/597 for a detailed changelog.
