@@ -70,7 +70,6 @@ without naming it).
 - [`no-dupe-else-if` (error)](https://eslint.org/docs/rules/no-dupe-else-if)
 - [`no-import-assign` (error)](https://eslint.org/docs/rules/no-import-assign)
 - [`no-setter-return` (error)](https://eslint.org/docs/rules/no-setter-return)
-- [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
 
 ## Updated rules
 
