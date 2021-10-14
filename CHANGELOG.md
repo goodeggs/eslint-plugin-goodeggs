@@ -1,8 +1,10 @@
 # vNEXT
 
+See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
 
 ## New rules
 
+- [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
 
 ## Updated rules
 

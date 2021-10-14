@@ -37,6 +37,7 @@ export default {
      */
     camelcase: 'error',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
+    'eol-last': ['error', 'always'],
     'global-require': 'error',
     'guard-for-in': 'error',
     'linebreak-style': ['error', 'unix'],
