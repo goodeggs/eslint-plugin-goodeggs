@@ -2734,14 +2734,15 @@ eslint-plugin-eslint-comments@^3.2.0:
     escape-string-regexp "^1.0.5"
     ignore "^5.0.5"
 
-eslint-plugin-flowtype@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-5.10.0.tgz#7764cc63940f215bf3f0bd2d9a1293b2b9b2b4bb"
+eslint-plugin-flowtype@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-7.0.0.tgz#da07684b5f0caf7c42ed013c2d0c04dbaf2960f4"
+  integrity sha512-kW3eipG2Vth6e0apYqmFs05IHhFklJJNokYNiNEO5AIjm7H29oTDybYNB2bMULUYcf7iX7Wf3GdRhfBORKcT1g==
   dependencies:
-    lodash "^4.17.15"
+    lodash "^4.17.21"
     string-natural-compare "^3.0.1"
 
-"eslint-plugin-goodeggs@file:./.":
+"eslint-plugin-goodeggs@file:.":
   version "12.0.4"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
