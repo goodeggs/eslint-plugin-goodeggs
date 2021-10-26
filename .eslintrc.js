@@ -19,7 +19,7 @@ module.exports = {
         allowAny: false,
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
-    ]
+    ],
   },
   overrides: [
     {
