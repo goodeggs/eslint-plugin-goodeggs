@@ -6,6 +6,21 @@ module.exports = {
   env: {
     node: true,
   },
+  rules: {
+    '@typescript-eslint/strict-boolean-expressions': [
+      'error',
+      {
+        allowString: true,
+        allowNumber: false,
+        allowNullableObject: true,
+        allowNullableBoolean: true,
+        allowNullableString: true,
+        allowNullableNumber: false,
+        allowAny: false,
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+      },
+    ]
+  },
   overrides: [
     {
       files: ['**/?(*.)test.!(*.){js,jsx,ts,tsx}'],
