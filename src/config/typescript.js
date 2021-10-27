@@ -124,7 +124,16 @@ export default {
         '@typescript-eslint/return-await': 'error',
         '@typescript-eslint/strict-boolean-expressions': [
           'error',
-          {allowString: false, allowNumber: false, allowNullableObject: false},
+          {
+            allowString: true,
+            allowNumber: false,
+            allowNullableObject: true,
+            allowNullableBoolean: true,
+            allowNullableString: true,
+            allowNullableNumber: false,
+            allowAny: false,
+            allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+          },
         ],
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
       },
