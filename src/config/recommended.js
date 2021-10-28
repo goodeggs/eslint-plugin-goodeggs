@@ -171,6 +171,17 @@ export default {
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-array-instanceof': 'error',
     'unicorn/no-new-buffer': 'error',
+    'unicorn/filename-case': [
+      'error',
+      {
+        // Ideally we would enable PascalCase only for React components somehow, but that would
+        // require a reliable pattern to match, so doesn't seem worthwhile.
+        cases: {
+          snakeCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
   },
   overrides: [
     // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.
