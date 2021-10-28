@@ -179,6 +179,7 @@ export default {
         cases: {
           snakeCase: true,
           pascalCase: true,
+          ignore: ['prettier-config.js'],
         },
       },
     ],
