@@ -2,6 +2,9 @@
 
 See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
 
+- [`@typescript-eslint/naming-convention`](https://github.com/typescript-eslint/typescript-eslint/blob/b6786559b2406a68887b27cf6c7d0185d56bc3f0/packages/eslint-plugin/docs/rules/naming-convention.md#enforce-that-interface-names-do-not-begin-with-an-i)
+  - Forbids the `I` prefix for interface type names.
+
 ## New rules
 
 - [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
