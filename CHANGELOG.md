@@ -1,13 +1,17 @@
 # vNEXT
 
-
 ## New rules
-
 
 ## Updated rules
 
-
 <!-- Put changelog messages that haven't yet been released above this! -->
+
+# v12.2.0
+
+## New rules
+
+- [`@typescript-eslint/strict-boolean-expressions` (Enhanced)](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md).
+  - Enhanced rule based on the [proposal discused by the team](https://github.com/goodeggs/standards-and-best-practices/issues/317).
 
 # v12.0.4
 
@@ -50,7 +54,7 @@ See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/597 for a detailed c
 Unfortunately, mongoose's `Model` (both in `@types/mongoose` and in the new built-in type
 declarations) is not typed as a `class` even though it is one. This means that TypeScript doesn't
 think it's a class, so `@typescript/eslint` doesn't think it's a class, so it doesn't allow
-PascalCase. It's unclear what next steps here are. Perhaps open a @types/mongoose issue or PR?  In
+PascalCase. It's unclear what next steps here are. Perhaps open a @types/mongoose issue or PR? In
 the meantime, this must be `eslint-disable`d or otherwise worked around (e.g. export the model
 without naming it).
 
