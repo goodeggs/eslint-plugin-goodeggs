@@ -93,6 +93,8 @@ export default {
             modifiers: ['requiresQuotes'],
             format: null,
           },
+          // Disallow the `I` prefix in interface type names (e.g. `IProduct`) and allow just PascalCase
+          // for interface names
           {
             selector: 'interface',
             format: ['PascalCase'],
