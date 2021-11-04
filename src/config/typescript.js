@@ -93,6 +93,14 @@ export default {
             modifiers: ['requiresQuotes'],
             format: null,
           },
+          {
+            selector: 'interface',
+            format: ['PascalCase'],
+            custom: {
+              regex: '^I[A-Z]',
+              match: false,
+            },
+          },
         ],
 
         '@typescript-eslint/no-array-constructor': 'error',
