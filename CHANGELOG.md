@@ -4,6 +4,7 @@ See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a de
 
 ## New rules
 
+- [unicorn/filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md#enforce-a-case-style-for-filenames)
 - [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
 - [@typescript-eslint/array-type](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md)
 - [@typescript-eslint/prefer-includes](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-includes.md)
