@@ -2,6 +2,10 @@
 
 See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
 
+## Breaking changes
+
+- `eslint-plugin-goodeggs/prettier-config` is no longer available! Please, use `@goodeggs/toolkit/config/prettier` instead.
+
 ## New rules
 
 - [unicorn/filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md#enforce-a-case-style-for-filenames)

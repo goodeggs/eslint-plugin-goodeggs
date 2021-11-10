@@ -6,8 +6,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "files": [
-    "lib/**/*",
-    "prettier-config.js"
+    "lib/**/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
