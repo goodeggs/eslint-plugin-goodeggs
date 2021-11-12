@@ -1,7 +1,7 @@
 import * as globs from '../globs';
 
 export default {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: [
     // https://github.com/babel/eslint-plugin-babel
     'babel',
