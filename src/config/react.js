@@ -1,7 +1,7 @@
 // https://github.com/yannickcr/eslint-plugin-react
 export default {
-  plugins: ['prettier', 'react', 'react-hooks'],
-  extends: ['plugin:import/react', 'plugin:react/recommended', 'prettier/react'],
+  plugins: ['react', 'react-hooks'],
+  extends: ['plugin:import/react', 'plugin:react/recommended'],
   settings: {
     react: {
       version: 'detect',

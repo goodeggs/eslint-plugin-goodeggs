@@ -24,9 +24,7 @@ export default {
     'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:lodash/recommended',
-    'prettier',
     'plugin:prettier/recommended',
-    'prettier/babel',
   ],
   env: {
     es6: true,

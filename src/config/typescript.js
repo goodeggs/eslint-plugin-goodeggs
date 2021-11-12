@@ -10,11 +10,7 @@ export default {
         // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
         '@typescript-eslint',
       ],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/typescript',
-        'prettier/@typescript-eslint',
-      ],
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/typescript'],
       rules: {
         // These are all superseded by better, type-aware @typescript-eslint rules. See
         // https://github.com/typescript-eslint/typescript-eslint/blob/885780d4a2b07e418256b7323d76b18453c14a50/packages/eslint-plugin/README.md#extension-rules.
