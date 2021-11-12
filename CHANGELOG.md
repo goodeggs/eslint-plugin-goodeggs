@@ -1,7 +1,5 @@
 # vNEXT
 
-See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
-
 ## Breaking changes
 
 - `eslint-plugin-goodeggs/prettier-config` is no longer available! Please, use `@goodeggs/toolkit/config/prettier` instead.
@@ -10,6 +8,7 @@ See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a de
 
 - [unicorn/filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md#enforce-a-case-style-for-filenames)
 - [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
+  - See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
 - [@typescript-eslint/array-type](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md)
 - [@typescript-eslint/prefer-includes](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-includes.md)
 - [@typescript-eslint/prefer-for-of](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-for-of.md)
@@ -18,13 +17,29 @@ See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a de
 - [@typescript-eslint/prefer-optional-chain](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md)
 - [@typescript-eslint/consistent-type-definitions](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md)
 
+## New rules
+
 ## Updated rules
 
 - [`@typescript-eslint/naming-convention`](https://github.com/typescript-eslint/typescript-eslint/blob/b6786559b2406a68887b27cf6c7d0185d56bc3f0/packages/eslint-plugin/docs/rules/naming-convention.md#enforce-that-interface-names-do-not-begin-with-an-i)
   - Forbids the `I` prefix for interface type names.
 
-
 <!-- Put changelog messages that haven't yet been released above this! -->
+
+# v12.2.0
+
+## Updated rules
+
+- [`@typescript-eslint/strict-boolean-expressions` (Enhanced)](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md).
+  - Enhanced rule based on the [proposal discused by the team](https://github.com/goodeggs/standards-and-best-practices/issues/317).
+
+# v12.0.4
+
+## New rules
+
+- [`no-constructor-return`](https://eslint.org/docs/rules/no-constructor-return)
+  - We decided not to make this a major even though this technically breaking. We expect this to
+    introduce no errors in almost every codebase.
 
 # v12.0.0
 
@@ -61,7 +76,7 @@ See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/597 for a detailed c
 Unfortunately, mongoose's `Model` (both in `@types/mongoose` and in the new built-in type
 declarations) is not typed as a `class` even though it is one. This means that TypeScript doesn't
 think it's a class, so `@typescript/eslint` doesn't think it's a class, so it doesn't allow
-PascalCase. It's unclear what next steps here are. Perhaps open a @types/mongoose issue or PR?  In
+PascalCase. It's unclear what next steps here are. Perhaps open a @types/mongoose issue or PR? In
 the meantime, this must be `eslint-disable`d or otherwise worked around (e.g. export the model
 without naming it).
 

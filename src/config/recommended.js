@@ -44,6 +44,7 @@ export default {
     'new-cap': ['error', {capIsNewExceptionPattern: '(unionized\\.)?JSONSchemaFactory'}],
     'no-alert': 'error',
     'no-await-in-loop': 'error',
+    'no-constructor-return': 'error',
     'no-debugger': 'error',
     'no-div-regex': 'error',
     // Turn this off because `x == null` is the blessed way to refine types in both TS and Flow

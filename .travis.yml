@@ -2,7 +2,7 @@ dist: bionic
 
 language: node_js
 node_js:
-  - 12.14.1
+  - 12.22.7
 
 cache:
   yarn: true
@@ -41,7 +41,7 @@ jobs:
         provider: npm
         email: open-source@goodeggs.com
         api_token:
-          secure: "VNNUgqm9whQadtrrHtzUS1sigzMmCkDNMpHCAmAocYPgaoKScdITRrL35tNxyB4pER4WAuSSrqGdsxi8G96uo7/SU3o1UkvD2dV/FRLAVUcjhp5995A3Ah5UH0D/6mEA4PZQC0e0kjOcFpLtpB8OMhyrQto1NjNdFyZg9k1/xbOdoUDRbz/YXd4mB5arxEui0wKbGcYYk4y8Abp3aHuKdJVtI8VbtdBOJZn+aXfh+wlGJzeD62AUT26nzm1VTnGPYAoF02YGL//IXp0/ddy5D+0hGaKeD1aLwY1wkf6qiKFqaMVUGbeUW140vtblxBQZfpGo77PPOk1z9zy0ZxBbI0pIaQnAeep8neAi6hfcs9SRHA/5oNSBdq+u2TmzAqdvGRWhNEs+M62ji7HCSmi7LUeM1hBx6yUlD1OEnP3HSBlT5ZKByqHlmtYXFZ+BBape6jX9GvQrAwwyq6C64hQDHhwNN3mTpeBwVRXN3fX5sv9u68NYP4eOy8djm3+jX0m4I/+cFEe2ZUmkNrOBvY2D3hs5ITIQjfkHRDt8UEPNsxn2+jBhQgtJFCiRyydqOzTTNzGCRtfmcYNb7i71k4/WhJOG9p6L1BzeoZERCmx66SGDwwgwxzEC7BKxZwNlIa9U5fT8N7mRiSFAZDBf6UWGa4ADZcGUVHVms1BbgNkiRXc="
+          secure: "EYTvota0/hOLW6hw/GZAaBpdy8UsQFGFEY2z80sl46MFocQaIA7S6VRYgtkja0epzsEapY9eSAfUaMz8oOmLsNRK2ZFmfmu2H6t6XaetP96D/2oMWTvNG8X9+MghWUbbKcHIzmbQ+S33Nja/OgrVxxlNfUL0Uuy+/HmrF07p7M1YVuKu7rHo86do438AFtz6FF8hYzlr6M7UdkPjr1WNMal60XHbHI9GstezfRkJtgKkxO2pCkLvgx/5MIcqGNeAa3azNcC1mAsum5AVnafaZCCMcEFUlnCk/3Wt6Sbc8ttI3Rsh8ifvitU0dyKCx7r9Vmum6ZrmZldbqRZtYxO7bdb6z8Ukmz+2q5U+JZwSRv8OpwT2hVeuxGsTWbqO9CBGyfsXgzBaYLoRlkXOkK1FmyfxUDocVBUWC1sIKW8hlMscmUG07F6YQYWGgHGUqgurU6C+OjwroOzbapEr4XoswUkNPWhxRRvpldrKyV3uUy1tjWyXkvU8ZsbjvV973ko40U4BOC4jCdWxBZCee41awm5Q0F5UWU5pOgaRj50nhP+Dcf8WFHnegdBwlfMhVR7KjBwDdLPH1sloT3zv/Ebw2ldMcjmDUwt0UMP2TfzuO2oEwkmDuYR/7f5xoW5bj5ZoVmOHoHaMEsC+XsxjhGWFl0hmztizSG3m7xNfVUq/jeA="
         skip_cleanup: true
         on:
           tags: true
