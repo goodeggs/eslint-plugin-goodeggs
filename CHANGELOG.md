@@ -2,10 +2,38 @@
 
 ## Breaking changes
 
+## New rules
+
+## Updated rules
+
+<!-- Put changelog messages that haven't yet been released above this! -->
+
+# v13.0.0
+
+## Breaking changes
+
 - `eslint-plugin-goodeggs/prettier-config` is no longer available! Please, use `@goodeggs/toolkit/config/prettier` instead.
+- Upgrade to [eslint v8](https://eslint.org/docs/8.0.0/user-guide/migrating-to-8.0.0).
+  - The most notable change is the addition of these four rules to the recommended set:
+    - `no-loss-of-precision`
+    - `no-nonoctal-decimal-escape`
+    - `no-unsafe-optional-chaining`
+    - `no-useless-backreference`
+- Upgrade from deprecated `babel-eslint` to `@babel/eslint-parser`.
+  - See https://github.com/babel/babel-eslint#note-babel-eslint-is-now-babeleslint-parser-and-has-moved-into-the-babel-monorepo.
+  - This should be pretty seamless.
+- Upgrade to [eslint-plugin-jest@25](https://github.com/jest-community/eslint-plugin-jest/blob/main/CHANGELOG.md).
+  - A few rules were renamed. This would only be breaking if your codebase had an eslint override for one
+    of these.
+- Upgrade to [eslint-config-prettier@8](https://github.com/prettier/eslint-config-prettier/blob/5a2f0e24382a8e1322784bc836d47706cccd2f1e/CHANGELOG.md#version-800-2021-02-21).
+   - This would only be breaking if your eslint config had some pretter config overrides for some reason.
+- Upgrade various other peer dependencies. This will only be breaking in @goodeggs/toolkit itself
+  and seamless elsewhere.
 
 ## New rules
 
+- [import/no-anonymous-default-export](https://github.com/import-js/eslint-plugin-import/blob/7c239fed485ea0785a96c1fa2045d96c181bb79c/docs/rules/no-anonymous-default-export.md)
+  - See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/438.
 - [unicorn/filename-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/filename-case.md#enforce-a-case-style-for-filenames)
 - [`eol-last` (error, always)](https://eslint.org/docs/rules/eol-last)
   - See https://github.com/goodeggs/standards-and-best-practices/issues/302 for a detailed discussion about `eol-last` recommended config.
@@ -16,15 +44,13 @@
 - [@typescript-eslint/no-confusing-void-expression](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-void-expression.md)
 - [@typescript-eslint/prefer-optional-chain](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md)
 - [@typescript-eslint/consistent-type-definitions](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md)
-
-## New rules
+  - See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/610 for all the above.
 
 ## Updated rules
 
 - [`@typescript-eslint/naming-convention`](https://github.com/typescript-eslint/typescript-eslint/blob/b6786559b2406a68887b27cf6c7d0185d56bc3f0/packages/eslint-plugin/docs/rules/naming-convention.md#enforce-that-interface-names-do-not-begin-with-an-i)
   - Forbids the `I` prefix for interface type names.
-
-<!-- Put changelog messages that haven't yet been released above this! -->
+  - See https://github.com/goodeggs/eslint-plugin-goodeggs/pull/827.
 
 # v12.2.0
 
