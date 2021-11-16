@@ -10,11 +10,7 @@ export default {
         // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
         '@typescript-eslint',
       ],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/typescript',
-        'prettier/@typescript-eslint',
-      ],
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/typescript'],
       rules: {
         // These are all superseded by better, type-aware @typescript-eslint rules. See
         // https://github.com/typescript-eslint/typescript-eslint/blob/885780d4a2b07e418256b7323d76b18453c14a50/packages/eslint-plugin/README.md#extension-rules.
@@ -93,6 +89,16 @@ export default {
             modifiers: ['requiresQuotes'],
             format: null,
           },
+          // Disallow the `I` prefix in interface type names (e.g. `IProduct`) and allow just PascalCase
+          // for interface names
+          {
+            selector: 'interface',
+            format: ['PascalCase'],
+            custom: {
+              regex: '^I[A-Z]',
+              match: false,
+            },
+          },
         ],
 
         '@typescript-eslint/no-array-constructor': 'error',
@@ -136,6 +142,13 @@ export default {
           },
         ],
         '@typescript-eslint/switch-exhaustiveness-check': 'error',
+        '@typescript-eslint/array-type': ['error', {default: 'array-simple'}],
+        '@typescript-eslint/prefer-includes': 'error',
+        '@typescript-eslint/prefer-for-of': 'error',
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+        '@typescript-eslint/no-confusing-void-expression': ['error', {ignoreArrowShorthand: true}],
+        '@typescript-eslint/prefer-optional-chain': 'error',
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       },
     },
   ],

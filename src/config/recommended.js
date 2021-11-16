@@ -1,7 +1,7 @@
 import * as globs from '../globs';
 
 export default {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: [
     // https://github.com/babel/eslint-plugin-babel
     'babel',
@@ -24,9 +24,7 @@ export default {
     'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:lodash/recommended',
-    'prettier',
     'plugin:prettier/recommended',
-    'prettier/babel',
   ],
   env: {
     es6: true,
@@ -37,6 +35,7 @@ export default {
      */
     camelcase: 'error',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
+    'eol-last': ['error', 'always'],
     'global-require': 'error',
     'guard-for-in': 'error',
     'linebreak-style': ['error', 'unix'],
@@ -131,6 +130,18 @@ export default {
         groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
       },
     ],
+    'import/no-anonymous-default-export': [
+      'error',
+      {
+        allowArray: true,
+        allowArrowFunction: false,
+        allowAnonymousClass: false,
+        allowAnonymousFunction: false,
+        allowCallExpression: true,
+        allowLiteral: true,
+        allowObject: true,
+      },
+    ],
 
     /*
      * eslint-plugin-lodash
@@ -159,6 +170,17 @@ export default {
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-array-instanceof': 'error',
     'unicorn/no-new-buffer': 'error',
+    'unicorn/filename-case': [
+      'error',
+      {
+        // Ideally we would enable PascalCase only for React components somehow, but that would
+        // require a reliable pattern to match, so doesn't seem worthwhile.
+        cases: {
+          snakeCase: true,
+          pascalCase: true,
+        },
+      },
+    ],
   },
   overrides: [
     // Configuration files (e.g. webpack.config.js) that are *not* transpiled through Babel.

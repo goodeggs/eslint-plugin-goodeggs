@@ -1,6 +1,6 @@
 export default {
-  plugins: ['flowtype', 'prettier'],
-  extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
+  plugins: ['flowtype'],
+  extends: ['plugin:flowtype/recommended'],
   settings: {
     flowtype: {
       onlyFilesWithFlowAnnotation: false,

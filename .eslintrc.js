@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: ['goodeggs'],
   extends: ['plugin:goodeggs/recommended', 'plugin:goodeggs/jest'],
   env: {
@@ -11,13 +11,6 @@ module.exports = {
       files: ['**/?(*.)test.!(*.){js,jsx,ts,tsx}'],
       env: {
         jest: true,
-      },
-    },
-    {
-      files: ['prettier-config.js'],
-      rules: {
-        'global-require': 'off',
-        'import/no-commonjs': 'off',
       },
     },
   ],

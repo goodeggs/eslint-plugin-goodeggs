@@ -1,1 +1,1 @@
-module.exports = require('eslint-plugin-goodeggs/prettier-config');
+module.exports = require('@goodeggs/prettier-config');
