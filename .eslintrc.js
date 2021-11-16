@@ -13,12 +13,5 @@ module.exports = {
         jest: true,
       },
     },
-    {
-      files: ['prettier-config.js'],
-      rules: {
-        'global-require': 'off',
-        'import/no-commonjs': 'off',
-      },
-    },
   ],
 };
