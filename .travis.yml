@@ -8,7 +8,7 @@ cache:
   yarn: true
 
 before_install:
-  - yarn set version 3.1.1
+  - yarn --version
 
 install: yarn install
 
