@@ -4510,7 +4510,7 @@ __metadata:
 
 "eslint-plugin-goodeggs@file:.::locator=eslint-plugin-goodeggs%40workspace%3A.":
   version: 13.0.0
-  resolution: "eslint-plugin-goodeggs@file:.#.::hash=f7e23f&locator=eslint-plugin-goodeggs%40workspace%3A."
+  resolution: "eslint-plugin-goodeggs@file:.#.::hash=ae1470&locator=eslint-plugin-goodeggs%40workspace%3A."
   dependencies:
     "@goodeggs/prettier-config": ^1.0.0
   peerDependencies:
@@ -4532,10 +4532,13 @@ __metadata:
     eslint-plugin-unicorn: ^38.0.1
     prettier: ^2.5.1
     typescript: ^4.5.5
+  dependenciesMeta:
+    eslint-config-prettier@8.3.0:
+      unplugged: true
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 62ac9a230f59ab3b2c72ed1c211aa808de8e06e421cc3d91e06a50565748f9b5c91fcec449e9346c135d87a1c186b43be01a234df2f459db8b5cc528b70381c3
+  checksum: 4d3089a760bf55eea0b754855609624c74d1cf883270dc5fc9c6c401b5a9fbba778a4bbf7dd4571fa0e991037d9d762f79d7ab6d135eab47afa683ce5c20b374
   languageName: node
   linkType: hard
 
@@ -4590,6 +4593,9 @@ __metadata:
     eslint-plugin-unicorn: ^38.0.1
     prettier: ^2.5.1
     typescript: ^4.5.5
+  dependenciesMeta:
+    eslint-config-prettier@8.3.0:
+      unplugged: true
   peerDependenciesMeta:
     typescript:
       optional: true

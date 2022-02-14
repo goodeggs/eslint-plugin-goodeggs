@@ -7,9 +7,6 @@ node_js:
 cache:
   yarn: true
 
-before_install:
-  - yarn --version
-
 install: yarn install
 
 jobs:

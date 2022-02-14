@@ -94,5 +94,10 @@
       "add-module-exports"
     ]
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "dependenciesMeta": {
+    "eslint-config-prettier@8.3.0": {
+      "unplugged": true
+    }
+  }
 }
