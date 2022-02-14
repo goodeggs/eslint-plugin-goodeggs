@@ -23,9 +23,6 @@ jobs:
     - stage: "Test"
       name: "Lint"
       script:
-      # Lint this package using this package. How meta.
-      - yarn link
-      - yarn link eslint-plugin-goodeggs
       - yarn run lint
     - name: "Unit Tests"
       script: yarn run test:unit
