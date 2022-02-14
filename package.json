@@ -93,5 +93,6 @@
     "plugins": [
       "add-module-exports"
     ]
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
