@@ -5,7 +5,17 @@
 ## New rules
 
 ## Updated rules
+
 - Disabled `no-await-in-loop` rule in recommended config.
+- Disabled many lodash rules:
+  - `lodash/chaining`
+  - `lodash/identity-shorthand`
+  - `lodash/prefer-compact`
+  - `lodash/prefer-wrapper-method`
+  - `lodash/prefer-get`
+  - `lodash/prefer-is-nil`
+  - `lodash/prefer-lodash-chain`
+  - `lodash/prefer-startswith`
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
