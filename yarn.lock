@@ -4508,41 +4508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-goodeggs@file:.::locator=eslint-plugin-goodeggs%40workspace%3A.":
-  version: 13.0.0
-  resolution: "eslint-plugin-goodeggs@file:.#.::hash=ae1470&locator=eslint-plugin-goodeggs%40workspace%3A."
-  dependencies:
-    "@goodeggs/prettier-config": ^1.0.0
-  peerDependencies:
-    "@babel/eslint-parser": ^7.17.0
-    "@typescript-eslint/eslint-plugin": ^5.11.0
-    "@typescript-eslint/parser": ^5.11.0
-    eslint: ^8.2.0
-    eslint-config-prettier: ^8.3.0
-    eslint-config-problems: ^5.0.0
-    eslint-plugin-babel: ^5.3.1
-    eslint-plugin-eslint-comments: ^3.2.0
-    eslint-plugin-flowtype: ^5.10.0
-    eslint-plugin-import: ^2.25.4
-    eslint-plugin-jest: ^25.2.4
-    eslint-plugin-lodash: ^7.3.0
-    eslint-plugin-mocha: ^9.0.0
-    eslint-plugin-prettier: ^4.0.0
-    eslint-plugin-react: ^7.28.0
-    eslint-plugin-unicorn: ^38.0.1
-    prettier: ^2.5.1
-    typescript: ^4.5.5
-  dependenciesMeta:
-    eslint-config-prettier@8.3.0:
-      unplugged: true
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 4d3089a760bf55eea0b754855609624c74d1cf883270dc5fc9c6c401b5a9fbba778a4bbf7dd4571fa0e991037d9d762f79d7ab6d135eab47afa683ce5c20b374
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-goodeggs@workspace:.":
+"eslint-plugin-goodeggs@^13.0.0, eslint-plugin-goodeggs@workspace:.":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-goodeggs@workspace:."
   dependencies:
@@ -4562,7 +4528,7 @@ __metadata:
     eslint-plugin-babel: ^5.3.1
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-flowtype: ^5.10.0
-    eslint-plugin-goodeggs: "file:."
+    eslint-plugin-goodeggs: ^13.0.0
     eslint-plugin-import: ^2.25.4
     eslint-plugin-jest: ^25.2.4
     eslint-plugin-lodash: ^7.3.0
@@ -4595,6 +4561,8 @@ __metadata:
     typescript: ^4.5.5
   dependenciesMeta:
     eslint-config-prettier@8.3.0:
+      unplugged: true
+    eslint-plugin-goodeggs@13.0.0:
       unplugged: true
   peerDependenciesMeta:
     typescript:
