@@ -48,7 +48,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-flowtype": "^5.10.0",
-    "eslint-plugin-goodeggs": "^12.2.0",
+    "eslint-plugin-goodeggs": "^13.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^25.2.4",
     "eslint-plugin-lodash": "^7.3.0",
@@ -93,5 +93,14 @@
     "plugins": [
       "add-module-exports"
     ]
+  },
+  "packageManager": "yarn@3.1.1",
+  "dependenciesMeta": {
+    "eslint-config-prettier@8.3.0": {
+      "unplugged": true
+    },
+    "eslint-plugin-goodeggs@13.0.0": {
+      "unplugged": true
+    }
   }
 }

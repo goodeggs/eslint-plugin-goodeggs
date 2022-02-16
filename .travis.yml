@@ -7,15 +7,7 @@ node_js:
 cache:
   yarn: true
 
-env:
-  global:
-    - PATH="$HOME/.yarn/bin:$PATH"
-    - YARN_VERSION="1.9.4"
-
-before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version "${YARN_VERSION}"
-
-install: yarn install --frozen-lockfile
+install: yarn install
 
 jobs:
   include:
@@ -28,9 +20,6 @@ jobs:
     - stage: "Test"
       name: "Lint"
       script:
-      # Lint this package using this package. How meta.
-      - yarn link
-      - yarn link eslint-plugin-goodeggs
       - yarn run lint
     - name: "Unit Tests"
       script: yarn run test:unit
