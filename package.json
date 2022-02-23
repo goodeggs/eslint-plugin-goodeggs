@@ -33,7 +33,7 @@
     "@goodeggs/prettier-config": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.3",
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
