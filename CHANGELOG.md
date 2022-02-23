@@ -6,6 +6,16 @@
 
 ## Updated rules
 
+<!-- Put changelog messages that haven't yet been released above this! -->
+
+# v14.0.0
+
+## Breaking changes
+
+## New rules
+
+## Updated rules
+
 - `@typescript-eslint/explicit-function-return-type`
   - rule updated to not require an explicit return type annotation on anonymous functions
   - NOTE: technically, we accidentally removed this rule in v11 and this is restoring it with
@@ -20,8 +30,6 @@
   - `lodash/prefer-is-nil`
   - `lodash/prefer-lodash-chain`
   - `lodash/prefer-startswith`
-
-<!-- Put changelog messages that haven't yet been released above this! -->
 
 # v13.0.0
 
