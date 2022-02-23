@@ -108,6 +108,7 @@ export default {
         // We often use empty interfaces for e.g. props factories for React components that don't yet,
         // but will eventually, accept any props.
         '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/explicit-function-return-type': ['error', {allowExpressions: true}],
         '@typescript-eslint/no-extra-non-null-assertion': 'error',
         '@typescript-eslint/no-extra-semi': 'error',
         '@typescript-eslint/no-for-in-array': 'error',

@@ -6,6 +6,10 @@
 
 ## Updated rules
 
+- `@typescript-eslint/explicit-function-return-type`
+  - rule updated to not require an explicit return type annotation on anonymous functions
+  - NOTE: technically, we accidentally removed this rule in v11 and this is restoring it with
+    relaxed options
 - Disabled `no-await-in-loop` rule in recommended config.
 - Disabled many lodash rules:
   - `lodash/chaining`
