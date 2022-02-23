@@ -146,21 +146,28 @@ export default {
     /*
      * eslint-plugin-lodash
      */
-    'lodash/chaining': ['error', 'always', 2],
+    'lodash/chaining': 'off',
     'lodash/import-scope': ['error', 'full'],
     'lodash/matches-prop-shorthand': ['error', 'never'],
     'lodash/matches-shorthand': ['error', 'never'],
     'lodash/path-style': ['error', 'as-needed'],
+    'lodash/prefer-compact': 'off',
     'lodash/prefer-constant': 'off',
     'lodash/prefer-flat-map': 'error',
+    'lodash/prefer-get': 'off',
+    'lodash/prefer-is-nil': 'off',
+    'lodash/prefer-lodash-chain': 'off',
     'lodash/prefer-lodash-method': 'off',
     'lodash/prefer-lodash-typecheck': 'off',
     'lodash/prefer-matches': 'off',
     'lodash/prefer-noop': 'off',
     'lodash/prefer-over-quantifier': 'off',
     'lodash/prefer-thru': 'off',
+    'lodash/prefer-startswith': 'off',
     'lodash/preferred-alias': 'error',
     'lodash/prop-shorthand': ['error', 'never'],
+    'lodash/prefer-wrapper-method': 'off',
+    'lodash/identity-shorthand': 'off',
 
     /*
      * eslint-plugin-unicorn
