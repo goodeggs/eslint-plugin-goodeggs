@@ -41,7 +41,7 @@ export default {
     'linebreak-style': ['error', 'unix'],
     'new-cap': ['error', {capIsNewExceptionPattern: '(unionized\\.)?JSONSchemaFactory'}],
     'no-alert': 'error',
-    'no-await-in-loop': 'error',
+    'no-await-in-loop': 'off',
     'no-constructor-return': 'error',
     'no-debugger': 'error',
     'no-div-regex': 'error',

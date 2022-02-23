@@ -5,6 +5,7 @@
 ## New rules
 
 ## Updated rules
+- Disabled `no-await-in-loop` rule in recommended config.
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
