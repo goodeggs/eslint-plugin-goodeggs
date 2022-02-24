@@ -186,6 +186,11 @@ export default {
           snakeCase: true,
           pascalCase: true,
         },
+        ignore: [
+          // The convention is to use the exact module name as the filename. We don't control NPM
+          // module names and they are almost always in kebab-case.
+          '\\.d\\.ts$',
+        ],
       },
     ],
   },
