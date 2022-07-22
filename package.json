@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-goodeggs",
-  "version": "14.0.2",
+  "version": "14.0.4-0",
   "author": "Good Eggs Inc.",
   "description": "An eslint plugin containing linter rules specific to Good Eggs.",
   "license": "MIT",
@@ -30,7 +30,8 @@
     "test:unit": "jest $JEST_FLAGS"
   },
   "dependencies": {
-    "@goodeggs/prettier-config": "^1.0.0"
+    "@goodeggs/prettier-config": "^1.0.0",
+    "@rushstack/eslint-patch": "^1.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",

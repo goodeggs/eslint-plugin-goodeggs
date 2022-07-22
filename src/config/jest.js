@@ -1,3 +1,5 @@
+import '@rushstack/eslint-patch/modern-module-resolution';
+
 import {extensions} from '../globs';
 
 // https://github.com/jest-community/eslint-plugin-jest
