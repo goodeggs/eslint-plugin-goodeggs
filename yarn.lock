@@ -245,7 +245,7 @@
     browserslist "^4.20.2"
     semver "^6.3.0"
 
-"@babel/helper-compilation-targets@^7.19.3":
+"@babel/helper-compilation-targets@^7.19.1", "@babel/helper-compilation-targets@^7.19.3":
   version "7.19.3"
   resolved "https://registry.yarnpkg.com/@babel/helper-compilation-targets/-/helper-compilation-targets-7.19.3.tgz#a10a04588125675d7c7ae299af86fa1b2ee038ca"
   dependencies:
@@ -717,7 +717,7 @@
   version "7.19.0"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.0.tgz#497fcafb1d5b61376959c1c338745ef0577aa02c"
 
-"@babel/parser@^7.19.3":
+"@babel/parser@^7.19.1", "@babel/parser@^7.19.3":
   version "7.19.3"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.19.3.tgz#8dd36d17c53ff347f9e55c328710321b49479a9a"
 
@@ -1421,7 +1421,7 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/traverse@^7.19.3":
+"@babel/traverse@^7.19.1", "@babel/traverse@^7.19.3":
   version "7.19.3"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.19.3.tgz#3a3c5348d4988ba60884e8494b0592b2f15a04b4"
   dependencies:
@@ -2751,9 +2751,9 @@ eslint-plugin-flowtype@^5.10.0:
     lodash "^4.17.15"
     string-natural-compare "^3.0.1"
 
-eslint-plugin-goodeggs@^14.0.2:
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-goodeggs/-/eslint-plugin-goodeggs-14.0.2.tgz#e8805ea98e581f4616224f9cb6a4e043ddc5b63f"
+eslint-plugin-goodeggs@^15.0.0:
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-goodeggs/-/eslint-plugin-goodeggs-15.0.0.tgz#be720fd7ea5ef9e0081d653a386b9ff170e3cbbf"
   dependencies:
     "@goodeggs/prettier-config" "^1.0.0"
 
