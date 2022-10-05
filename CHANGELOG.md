@@ -8,6 +8,12 @@
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
+# v15.0.0
+
+## New rules
+
+- `import/extensions`: see https://github.com/goodeggs/eslint-plugin-goodeggs/pull/987
+
 # v14.0.0
 
 ## Breaking changes
