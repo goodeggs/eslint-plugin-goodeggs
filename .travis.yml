@@ -2,7 +2,8 @@ dist: bionic
 
 language: node_js
 node_js:
-  - 12.22.12
+  - 14
+  - 16
 
 cache:
   yarn: true
@@ -46,3 +47,4 @@ jobs:
         on:
           tags: true
           all_branches: true
+          node_js: '14'

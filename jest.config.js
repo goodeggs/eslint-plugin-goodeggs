@@ -41,7 +41,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
   testMatch: ['**/?(*.)test.!(*.){js,jsx,ts,tsx}'],
   testPathIgnorePatterns: ['<rootDir>/lib/', '<rootDir>/node_modules/'],
-  testURL: 'http://localhost',
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },

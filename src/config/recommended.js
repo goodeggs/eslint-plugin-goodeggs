@@ -113,6 +113,15 @@ export default {
     /*
      * eslint-plugin-import
      */
+    'import/extensions': [
+      'error',
+      // Ban use of extensions in imports (e.g. `import foo from './bar.js'`), but only for our
+      // standard source files. This is because:
+      // - the `.json` extension is required, otherwise TypeScript is otherwise unable to resolve those
+      // - in frontend apps, we use webpack magic to 'import' assets such as fonts, images, CSS, etc.
+      // - there are too many possible extensions for these assets to whitelist explicitly here
+      globs.extensions.reduce((acc, ext) => ({[ext]: 'never'}), {}),
+    ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
