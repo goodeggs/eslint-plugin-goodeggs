@@ -120,7 +120,11 @@ export default {
       // - the `.json` extension is required, otherwise TypeScript is otherwise unable to resolve those
       // - in frontend apps, we use webpack magic to 'import' assets such as fonts, images, CSS, etc.
       // - there are too many possible extensions for these assets to whitelist explicitly here
-      globs.extensions.reduce((acc, ext) => ({[ext]: 'never'}), {}),
+      // ... Unfortunately it isn't possible to "only configure" this rule for some extensions.
+      // All we can do is _require_ or _ban_ extensions for any given extension. So ban it for our
+      // standard source files and require it for everything else, and hope that's reasonable-ish.
+      'always',
+      globs.extensions.reduce((acc, ext) => ({...acc, [ext]: 'never'}), {}),
     ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
