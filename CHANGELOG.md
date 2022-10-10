@@ -8,7 +8,7 @@
 
 <!-- Put changelog messages that haven't yet been released above this! -->
 
-# v15.0.0
+# v15.0.1
 
 ## New rules
 
