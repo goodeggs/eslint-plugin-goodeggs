@@ -3,7 +3,7 @@ dist: bionic
 language: node_js
 node_js:
   - 14.21.3
-  - 16
+  - 16.20.2
 
 cache:
   yarn: true
