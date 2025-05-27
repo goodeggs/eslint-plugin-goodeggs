@@ -1468,6 +1468,13 @@
   dependencies:
     eslint-visitor-keys "^3.3.0"
 
+"@eslint-community/eslint-utils@^4.4.1":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.7.0.tgz#607084630c6c033992a082de6e6fbc1a8b52175a"
+  integrity sha512-dyybb3AcajC7uha6CvhdVRJqaKyn7w2YKqKyAN37NKYgZT36w+iRb0Dymmc5qEJ549c/S31cMMSFd75bteCpCw==
+  dependencies:
+    eslint-visitor-keys "^3.4.3"
+
 "@eslint-community/regexpp@^4.4.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.4.0.tgz#3e61c564fcd6b921cb789838631c5ee44df09403"
@@ -3419,14 +3426,13 @@ eslint-plugin-lodash@^7.4.0:
   dependencies:
     lodash "^4.17.21"
 
-eslint-plugin-mocha@^10.5.0:
-  version "10.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-10.5.0.tgz#0aca8d709e7cddef566e0dc252f6b02e307a2b7e"
-  integrity sha512-F2ALmQVPT1GoP27O1JTZGrV9Pqg8k79OeIuvw63UxMtQKREZtmkK1NFgkZQ2TW7L2JSSFKHFPTtHu5z8R9QNRw==
+eslint-plugin-mocha@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-11.1.0.tgz#a381d386aa858ceaf30ec2909c7e306ad04e9626"
+  integrity sha512-rKntVWRsQFPbf8OkSgVNRVRrcVAPaGTyEgWCEyXaPDJkTl0v5/lwu1vTk5sWiUJU8l2sxwvGUZzSNrEKdVMeQw==
   dependencies:
-    eslint-utils "^3.0.0"
-    globals "^13.24.0"
-    rambda "^7.4.0"
+    "@eslint-community/eslint-utils" "^4.4.1"
+    globals "^15.14.0"
 
 eslint-plugin-prettier@^4.2.1:
   version "4.2.1"
@@ -3527,6 +3533,11 @@ eslint-visitor-keys@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.0.tgz#c7f0f956124ce677047ddbc192a68f999454dedc"
   integrity sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==
+
+eslint-visitor-keys@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
+  integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
 eslint@^8.39.0:
   version "8.39.0"
@@ -3977,12 +3988,10 @@ globals@^13.19.0:
   dependencies:
     type-fest "^0.20.2"
 
-globals@^13.24.0:
-  version "13.24.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-13.24.0.tgz#8432a19d78ce0c1e833949c36adb345400bb1171"
-  integrity sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==
-  dependencies:
-    type-fest "^0.20.2"
+globals@^15.14.0:
+  version "15.15.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-15.15.0.tgz#7c4761299d41c32b075715a4ce1ede7897ff72a8"
+  integrity sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==
 
 globalthis@^1.0.3:
   version "1.0.3"
@@ -5625,11 +5634,6 @@ pure-rand@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/pure-rand/-/pure-rand-6.0.0.tgz#701996ceefa253507923a0e864c17ab421c04a7c"
   integrity sha512-rLSBxJjP+4DQOgcJAx6RZHT2he2pkhQdSnofG5VWyVl6GRq/K02ISOuOLcsMOrtKDIJb8JN2zm3FFzWNbezdPw==
-
-rambda@^7.4.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/rambda/-/rambda-7.5.0.tgz#1865044c59bc0b16f63026c6e5a97e4b1bbe98fe"
-  integrity sha512-y/M9weqWAH4iopRd7EHDEQQvpFPHj1AA3oHozE9tfITHUtTR7Z9PSlIRRG2l1GuW7sefC1cXFfIcF+cgnShdBA==
 
 react-is@^16.13.1:
   version "16.13.1"
