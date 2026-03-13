@@ -1608,6 +1608,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.39.0.tgz#58b536bcc843f4cd1e02a7e6171da5c040f4d44b"
   integrity sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==
 
+"@eslint/js@^9.19.0":
+  version "9.39.4"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.39.4.tgz#a3f83bfc6fd9bf33a853dfacd0b49b398eb596c1"
+  integrity sha512-nE7DEIchvtiFTwBw4Lfbu59PG+kCofhjsKaCWzxTpt4lfRjRMqG6uMBzKXuEcyXhOHoUp9riAm7/aWYGhXZ9cw==
+
 "@goodeggs/prettier-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@goodeggs/prettier-config/-/prettier-config-1.0.0.tgz#c58c75dfeafb3dacadc586934c1622b7b5b6acab"
@@ -3553,9 +3558,12 @@ eslint-config-prettier@^8.10.2:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.10.2.tgz#0642e53625ebc62c31c24726b0f050df6bd97a2e"
   integrity sha512-/IGJ6+Dka158JnP5n5YFMOszjDWrXggGz1LaK/guZq9vZTmniaKlHcsscvkAhn9y4U+BU3JuUdYvtAMcv30y4A==
 
-eslint-config-problems@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-problems/-/eslint-config-problems-6.0.0.tgz#bd74171224d25114ade5c19ba9043cc9b64e3e84"
+eslint-config-problems@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-problems/-/eslint-config-problems-9.0.0.tgz#0643cb5a2f2ce188c724b176363ac05c44f8049e"
+  integrity sha512-Gc/MOj1qAuBe5mbsCjpkBNLpoB0U+TAmF8ZLiEBha8fLIN58DFJvaqGHXzkP8DCYwGGDI6KRKP+UzGE965a1TA==
+  dependencies:
+    "@eslint/js" "^9.19.0"
 
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
